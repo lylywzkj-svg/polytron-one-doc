@@ -4,8 +4,8 @@
 .professional-workflow .professional-workflow-heading p { margin: 0; font-size: 16px; line-height: 1.75; }
 .professional-workflow .professional-workflow-figure { margin: 0 0 36px; }
 .professional-workflow-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 12px; font-size: 14px; color: #6b6b6b; }
-.professional-workflow-tools a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; color: #171717; background: #fff; text-decoration: none; font-weight: 500; }
-.professional-workflow-tools a:hover { border-color: #8c8c8c; }
+.professional-workflow-tools button { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; color: #171717; background: #fff; font: inherit; font-weight: 500; cursor: pointer; }
+.professional-workflow-tools button:hover { border-color: #8c8c8c; }
 .professional-workflow-canvas { width: 100%; max-width: 100%; overflow: visible; border: 1px solid #ddd; border-radius: 6px; background: #fafafa; }
 .professional-workflow-canvas svg { display: block; width: 100%; max-width: 100%; min-width: 0; height: auto; font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif; }
 .professional-workflow-canvas .stage { font-size: 20px; font-weight: 600; fill: #191919; }
@@ -23,7 +23,7 @@
 .professional-workflow-notes h3 { margin: 0 0 14px; font-size: 20px; font-weight: 600; line-height: 1.5; color: #171717; scroll-margin-top: 32px; }
 .professional-workflow-notes p { margin: 0 0 12px; font-size: 16px; line-height: 1.8; }
 .professional-workflow-notes p:last-child { margin-bottom: 0; }
-.professional-workflow-tools a:focus-visible { outline: 2px solid #0070f3; outline-offset: 4px; }
+.professional-workflow-tools button:focus-visible { outline: 2px solid #0070f3; outline-offset: 4px; }
 @media (max-width: 760px) { .professional-workflow .professional-workflow-heading h2 { font-size: 26px; } }
 @media print { .professional-workflow-tools { display: none; } .professional-workflow-canvas { overflow: visible; border: 0; } .professional-workflow-canvas svg { min-width: 0; width: 100%; } .professional-workflow-figure { break-inside: avoid; } }
 
@@ -63,3 +63,36 @@
  .priority-workflow-canvas .diagram-wide { display: block; }
  .priority-workflow-canvas .diagram-mobile { display: none; }
 }
+
+.professional-workflow-dialog {
+  width: min(1440px, calc(100vw - 48px));
+  max-width: none;
+  height: min(1100px, calc(100dvh - 48px));
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  background: #fafafa;
+  overflow: hidden;
+}
+.professional-workflow-dialog[open] { display: flex; flex-direction: column; }
+.professional-workflow-dialog::backdrop { background: rgba(0, 0, 0, .55); }
+.workflow-dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 24px; border-bottom: 1px solid #ddd; }
+.workflow-dialog-header h2 { margin: 0; font-size: 22px; line-height: 1.4; font-weight: 600; color: #171717; }
+.workflow-dialog-header button { display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border: 1px solid #ddd; border-radius: 6px; background: #fff; color: #4d4d4d; cursor: pointer; }
+.workflow-dialog-header button:hover { border-color: #8c8c8c; color: #171717; }
+.workflow-dialog-header button:focus-visible, .workflow-dialog-body:focus-visible { outline: 2px solid #0070f3; outline-offset: -4px; }
+.workflow-dialog-body { flex: 1; min-height: 0; padding: 16px 24px; overflow: auto; overscroll-behavior: contain; }
+.workflow-dialog-body .professional-workflow-canvas { height: 100%; border: 0; border-radius: 0; }
+.workflow-dialog-body .professional-workflow-canvas > svg { height: 100%; width: 100%; }
+.workflow-dialog-note { flex-shrink: 0; margin: 0; padding: 12px 24px 16px; border-top: 1px solid #ddd; font-size: 14px; line-height: 1.6; }
+@media (max-width: 760px) {
+ .professional-workflow-dialog { width: calc(100vw - 24px); height: calc(100dvh - 24px); }
+ .workflow-dialog-header { padding: 12px 16px; gap: 12px; }
+ .workflow-dialog-header h2 { font-size: 18px; }
+ .workflow-dialog-body { padding: 16px; }
+ .workflow-dialog-body .diagram-mobile { padding: 0; }
+ .workflow-dialog-note { padding: 12px 16px; font-size: 13px; }
+}
+@media print { .professional-workflow-dialog[open] { display: none; } }

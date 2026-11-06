@@ -1,6 +1,7 @@
 import { professionalWorkflowGuides } from "./professionalWorkflowData";
 import { priorityWorkflowGuides } from "./priorityWorkflowData";
 import { visualSourceDocId } from "./sharedVersionVisuals";
+import { WorkflowDiagramPreview } from "./WorkflowDiagramPreview";
 import "./professional-workflow.css";
 
 function workflowGuideForDoc(docId: string) {
@@ -24,7 +25,6 @@ export function ProfessionalWorkflowGuide({ docId }: { docId: string }) {
   const sourceId = visualSourceDocId(docId);
   const guide = workflowGuideForDoc(docId);
   if (!guide) return null;
-  const isChinese = guide.locale === "zh";
 
   return (
     <section className="professional-workflow" aria-labelledby={guide.anchor} lang={guide.locale}>
@@ -33,11 +33,7 @@ export function ProfessionalWorkflowGuide({ docId }: { docId: string }) {
         <p>{guide.intro}</p>
       </header>
       <figure className="professional-workflow-figure">
-        <div className="professional-workflow-tools">
-          <a href={guide.fullView} target="_blank" rel="noopener noreferrer">
-            {isChinese ? "放大查看" : "View Larger"}
-          </a>
-        </div>
+        <WorkflowDiagramPreview key={docId} guide={guide} />
         <div
           className={`professional-workflow-canvas${guide.mobileHtml ? " priority-workflow-canvas" : ""}`}
           role="region"
