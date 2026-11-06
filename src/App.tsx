@@ -6102,7 +6102,15 @@ function FaqRouterVisual({ isEnglish = false }: { isEnglish?: boolean }) {
 }
 
 function SupplementalVisuals({ doc }: { doc: DocPage }) {
-  if (getProfessionalWorkflowToc(doc.id)) return <ProfessionalWorkflowGuide docId={doc.id} />;
+  if (getProfessionalWorkflowToc(doc.id)) {
+    return <>
+      <ProfessionalWorkflowGuide docId={doc.id} />
+      {doc.id === "cameras-camera-management" && <CameraTroubleshootingVisual />}
+      {doc.id === "en-cameras-camera-management" && <CameraTroubleshootingVisual isEnglish />}
+      {doc.id === "cameras-alarm-settings" && <AiRuleAndAreaVisual />}
+      {doc.id === "en-cameras-alarm-settings" && <AiRuleAndAreaVisual isEnglish />}
+    </>;
+  }
   const sourceId = visualSourceDocId(doc.id);
   const isLegacy = sourceId !== doc.id;
   doc = { ...doc, id: sourceId };
@@ -6389,7 +6397,12 @@ function PublicDocsApp() {
   }, [isVersionMenuOpen]);
 
   const { html: anchoredContent, introHtml, tocItems } = docContentWithAnchors(selectedDoc, publicDocs);
-  const supplementalTocItems = getProfessionalWorkflowToc(selectedDoc.id) ?? supplementalTocByDocId[visualSourceDocId(selectedDoc.id)] ?? [];
+  const professionalTocItems = getProfessionalWorkflowToc(selectedDoc.id);
+  const nativeTocItems = supplementalTocByDocId[visualSourceDocId(selectedDoc.id)] ?? [];
+  const keepsNativeVisuals = /^(?:en-)?cameras-(?:camera-management|alarm-settings)$/.test(selectedDoc.id);
+  const supplementalTocItems = professionalTocItems
+    ? [...professionalTocItems, ...(keepsNativeVisuals ? nativeTocItems : [])]
+    : nativeTocItems;
   const docsContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

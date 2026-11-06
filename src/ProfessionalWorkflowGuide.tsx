@@ -1,10 +1,15 @@
 import { professionalWorkflowGuides } from "./professionalWorkflowData";
+import { priorityWorkflowGuides } from "./priorityWorkflowData";
 import { visualSourceDocId } from "./sharedVersionVisuals";
 import "./professional-workflow.css";
 
+function workflowGuideForDoc(docId: string) {
+  return priorityWorkflowGuides[docId] ?? professionalWorkflowGuides[visualSourceDocId(docId)];
+}
+
 export function getProfessionalWorkflowToc(docId: string) {
   const sourceId = visualSourceDocId(docId);
-  const guide = professionalWorkflowGuides[sourceId];
+  const guide = workflowGuideForDoc(docId);
   if (!guide) return null;
   return [
     { id: guide.anchor, heading: guide.title },
@@ -17,7 +22,7 @@ export function getProfessionalWorkflowToc(docId: string) {
 
 export function ProfessionalWorkflowGuide({ docId }: { docId: string }) {
   const sourceId = visualSourceDocId(docId);
-  const guide = professionalWorkflowGuides[sourceId];
+  const guide = workflowGuideForDoc(docId);
   if (!guide) return null;
   const isChinese = guide.locale === "zh";
 
@@ -34,11 +39,11 @@ export function ProfessionalWorkflowGuide({ docId }: { docId: string }) {
           </a>
         </div>
         <div
-          className="professional-workflow-canvas"
+          className={`professional-workflow-canvas${guide.mobileHtml ? " priority-workflow-canvas" : ""}`}
           role="region"
           aria-label={guide.title}
-          // SVG markup is authored locally and bundled with the application, never supplied by a user or a remote request.
-          dangerouslySetInnerHTML={{ __html: guide.svg }}
+          // Diagram markup is authored locally and bundled with the application, never supplied by a user or a remote request.
+          dangerouslySetInnerHTML={{ __html: guide.svg + (guide.mobileHtml ?? "") }}
         />
         <figcaption>{guide.note}</figcaption>
       </figure>

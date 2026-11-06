@@ -1,4 +1,4 @@
-export type ProfessionalWorkflowData = { locale: "zh" | "en"; anchor: string; title: string; intro: string; note: string; svg: string; fullView: string; blocks: [string, string[]][] };
+export type ProfessionalWorkflowData = { locale: "zh" | "en"; anchor: string; title: string; intro: string; note: string; svg: string; mobileHtml?: string; fullView: string; blocks: [string, string[]][] };
 
 export const professionalWorkflowGuides: Record<string, ProfessionalWorkflowData> = {
   "cameras-recording-schedule": {
