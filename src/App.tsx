@@ -5112,7 +5112,7 @@ const supplementalTocByDocId: Record<string, SupplementalTocItem[]> = {
   ],
   "en-overview": [
     { id: "platform-landscape", heading: "Platform Capability Landscape" },
-    { id: "core-workflow", heading: "Core Business Loop" },
+    { id: "core-workflow", heading: "Monitoring and Response Workflow" },
     { id: "reading-paths", heading: "Start by Role" },
   ],
   "alarm-trigger": [{ id: "alarm-lifecycle", heading: "警报处理状态流" }],
@@ -5173,17 +5173,17 @@ function OverviewSupplementalVisuals({ isEnglish = false, isLegacy = false }: { 
         aria: "POLYTRON ONE product guide diagrams",
         mapKicker: "PRODUCT MAP",
         mapHeading: "Platform Capability Landscape",
-        mapIntro: "POLYTRON ONE organizes video ingestion, event handling, evidence, and operational collaboration in one workspace.",
+        mapIntro: "Connect camera sources to live monitoring, detection, alarm response, and recording review in one workspace.",
         sourceTitle: "Video Sources",
         sourceItems: ["Network Cameras", "Existing VMS"],
-        coreKicker: "Unified intelligent video foundation",
+        coreKicker: "Video Monitoring and Analysis",
         capabilities: ["Device Management", "Live Viewing", "AI Detection", "Recording Storage", "Alarm Center", "Access Audit"],
         outputTitle: "Applications and Collaboration",
         outputItems: ["Security Operations", "Event Evidence", "3D / Work Orders / Business Systems"],
-        mapCaption: "Device state, video, detection results, and handling records remain connected in one platform, reducing cross-system lookup and repeated work.",
+        mapCaption: "Use linked device status, video, detection results, and response records to investigate an event. Project configuration determines external integrations.",
         workflowKicker: "RECOMMENDED PRACTICE",
-        workflowHeading: "Core Business Loop",
-        workflowIntro: "Daily operations extend beyond watching video. Detection, verification, response, and traceability form one complete loop.",
+        workflowHeading: "Monitoring and Response Workflow",
+        workflowIntro: "Follow an event from camera connection and detection rules through verification, response, and recording review.",
         workflow: [
           ["01", "Connect Video", "Add and validate cameras"],
           ["02", "Configure Rules", "Choose area, schedule, and algorithm"],
@@ -5194,7 +5194,7 @@ function OverviewSupplementalVisuals({ isEnglish = false, isLegacy = false }: { 
         ],
         readingKicker: "READING GUIDE",
         readingHeading: "Start by Role",
-        readingIntro: "Choose the shortest path for the role instead of reading every page from the beginning.",
+        readingIntro: "Start with the modules used in your role, then follow the relevant investigation or administration workflow.",
         roles: [
           ["On-duty operator", "Find and Handle Today's Exceptions", "Home inspection → Live View → Notification review → Alarm Handling", "/en/docs/home", "Start with Home"],
           ["Investigator", "Reconstruct Events and Retain Evidence", "Notification detail → Alarm clip → Playback → Clip and download", "/en/docs/notifications", "Start with Notifications"],
@@ -5307,7 +5307,7 @@ function OverviewSupplementalVisuals({ isEnglish = false, isLegacy = false }: { 
 function AlarmLifecycleVisual({ isEnglish = false }: { isEnglish?: boolean }) {
   const states = isEnglish
     ? [
-        ["Alarm Created", "The system detects an exception and creates a record"],
+        ["Alarm Created", "A configured rule triggers and creates an alarm record"],
         ["Pending Verification", "The operator checks the scene and event details"],
         ["Video Review", "Review footage before and after the trigger"],
         ["In Progress", "Perform the response and add handling notes"],
@@ -5327,7 +5327,7 @@ function AlarmLifecycleVisual({ isEnglish = false }: { isEnglish?: boolean }) {
         <div className="supplemental-heading">
           <span>{isEnglish ? "EVENT MANAGEMENT" : "事件管理"}</span>
           <h2 id="alarm-lifecycle">{isEnglish ? "Alarm Handling State Flow" : "警报处理状态流"}</h2>
-          <p>{isEnglish ? "Every alarm needs a clear outcome. Handle verified incidents; mark a False Alarm and record the reason when no real risk exists." : "每条警报都应有明确结论。确认真实事件后进入处置；确认无风险时标记误报并记录原因。"}</p>
+          <p>{isEnglish ? "Review the footage and record the outcome. Respond to verified incidents; use the available False Alarm action and document the cause when the detection is incorrect." : "每条警报都应有明确结论。确认真实事件后进入处置；确认无风险时标记误报并记录原因。"}</p>
         </div>
         <ol className="state-flow" aria-label={isEnglish ? "Alarm state flow from creation to archive" : "警报从产生到归档的状态流转"}>
           {states.map(([title, detail], index) => (
@@ -5341,7 +5341,7 @@ function AlarmLifecycleVisual({ isEnglish = false }: { isEnglish?: boolean }) {
         <div className="decision-branch">
           <strong>{isEnglish ? "Verification Outcome" : "核查结论"}</strong>
           <span><b>{isEnglish ? "Confirmed Incident" : "真实事件"}</b> → {isEnglish ? "Set to In Progress → Close after response" : "更新为处理中 → 完成处置后关闭"}</span>
-          <span><b>{isEnglish ? "False Alarm" : "误报事件"}</b> → {isEnglish ? "Mark False Alarm → Record reason → Improve the detection rule" : "标记误报 → 填写原因 → 优化检测规则"}</span>
+          <span><b>{isEnglish ? "False Alarm" : "误报事件"}</b> → {isEnglish ? "Mark False Alarm → Record cause → Review the rule" : "标记误报 → 填写原因 → 优化检测规则"}</span>
         </div>
       </div>
     </section>
@@ -5352,7 +5352,7 @@ function CameraOnboardingVisual({ isEnglish = false }: { isEnglish?: boolean }) 
   const steps = isEnglish
     ? [
         ["Add Camera", "Enter the camera details and connection settings"],
-        ["Validate Connection", "Confirm network, credentials, and Video Stream"],
+        ["Validate Connection", "Verify network, credentials, and the video stream"],
         ["Assign Location", "Set name, group, area, and 3D position"],
         ["Recording Policy", "Configure schedule and retention requirements"],
         ["AI Rules", "Draw areas and set algorithm, threshold, and schedule"],
@@ -5373,7 +5373,7 @@ function CameraOnboardingVisual({ isEnglish = false }: { isEnglish?: boolean }) 
         <div className="supplemental-heading">
           <span>{isEnglish ? "CONFIGURATION PATH" : "配置路径"}</span>
           <h2 id="camera-onboarding">{isEnglish ? "Camera Onboarding and Activation" : "相机接入与启用流程"}</h2>
-          <p>{isEnglish ? "Online only confirms connectivity. Recording and AI rule configuration are also required for complete monitoring and traceability." : "“相机在线”只表示连接成功；完成录像与 AI 规则配置后，设备才具备完整的监控和追溯能力。"}</p>
+          <p>{isEnglish ? "Verify connectivity first, then configure and test the recording schedules and AI rules required for the camera." : "“相机在线”只表示连接成功；完成录像与 AI 规则配置后，设备才具备完整的监控和追溯能力。"}</p>
         </div>
         <ol className="onboarding-flow" aria-label={isEnglish ? "Six camera onboarding steps" : "相机接入的六个配置步骤"}>
           {steps.map(([title, detail], index) => (
@@ -5554,7 +5554,7 @@ function AlarmDetailAnatomyVisual({ isEnglish = false }: { isEnglish?: boolean }
         <div className="supplemental-heading">
           <span>{isEnglish ? "READING THE DETAILS" : "详情阅读"}</span>
           <h2 id="alarm-detail-anatomy">{isEnglish ? "Alarm Detail Anatomy" : "警报详情解剖图"}</h2>
-          <p>{isEnglish ? "Confirm the event facts, review the video, then update the state and record the conclusion." : "先确认事件基本信息，再核查录像，最后更新状态并记录结论。"}</p>
+          <p>{isEnglish ? "Verify the event details against the footage, then save the response status and findings." : "先确认事件基本信息，再核查录像，最后更新状态并记录结论。"}</p>
         </div>
         <div className="alarm-anatomy">
           <div className="alarm-mockup" aria-hidden="true">
@@ -5726,7 +5726,7 @@ function NotificationRelationshipVisual({ isEnglish = false }: { isEnglish?: boo
         <div className="supplemental-heading">
           <span>{isEnglish ? "CONCEPT RELATIONSHIP" : "概念关系"}</span>
           <h2 id="event-notification-relationship">{isEnglish ? "Events, Alarms, and Notifications" : "事件、警报与通知的关系"}</h2>
-          <p>{isEnglish ? "An alarm is a traceable business record. A notification is the message and entry point that brings that record to the user's attention." : "警报是需要追踪的业务记录；通知是提醒用户关注该记录的入口，两者不是同一个概念。"}</p>
+          <p>{isEnglish ? "An alarm records an event for investigation. A notification alerts the user and provides an entry point to that record." : "警报是需要追踪的业务记录；通知是提醒用户关注该记录的入口，两者不是同一个概念。"}</p>
         </div>
         <ol className="relationship-flow">
           {items.map(([title, detail], index) => (
@@ -5967,7 +5967,7 @@ function EvidenceExportWorkflowVisual({ isEnglish = false }: { isEnglish?: boole
         <div className="supplemental-heading">
           <span>{isEnglish ? "EVIDENCE HANDLING" : "证据链路"}</span>
           <h2 id="evidence-export-workflow">{isEnglish ? "Evidence Export Workflow" : "证据导出工作流"}</h2>
-          <p>{isEnglish ? "A completed download is not the end of retention. Verify the file and register its source, time range, and storage location." : "导出成功不等于留存完成；还需要复核文件并登记来源、时间范围和保存位置。"}</p>
+          <p>{isEnglish ? "Open the downloaded file and verify its contents. Record the source, footage interval, and storage location before retaining or sharing it." : "导出成功不等于留存完成；还需要复核文件并登记来源、时间范围和保存位置。"}</p>
         </div>
         <ol className="evidence-workflow">
           {steps.map(([title, detail], index) => <li key={title}><span>{index + 1}</span><div><strong>{title}</strong><small>{detail}</small></div>{index < steps.length - 1 && <SupplementalArrow />}</li>)}
