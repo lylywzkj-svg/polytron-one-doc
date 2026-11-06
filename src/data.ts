@@ -69,7 +69,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "11.2",
     "readingTime": 5,
-    "summary": "POLYTRON ONE 将相机接入、实时监控、AI 事件检测、警报处置和录像回放整合在同一平台。值守人员可从异常提示进入视频核查和处置，调查人员可检索录像并留存证据，管理员可维护设备、账号和访问范围。本文档按实际使用路径组织，帮助各类用户完成日常监控、事件追溯和系统维护。",
+    "summary": "POLYTRON ONE 是面向现场监控、事件调查与协同处置的 AI 原生视频管理系统（VMS），将实时视频分析、空间理解与智能自动化整合到同一平台。多尺度注意力融合网络（MAFN）与专利 APEX Engine™ 结合空间和语义线索，为具备上下文感知能力的视觉分析及智能体视觉智能系统提供基础。在实际工作中，管理员维护视频来源和检测规则，值守人员核查实时画面及警报，调查人员回看事件经过并留存结论。平台可用于安防、零售、物流和智慧城市等场景；具体可用的分析、联动与自动化范围，以项目部署、设备能力、账号权限和处置流程为准。",
     "tags": [
       "系统概述",
       "概览",
@@ -150,7 +150,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "11.2",
     "readingTime": 3,
-    "summary": "本章介绍 POLYTRON ONE 的账号登录、凭据保存和密码恢复。首次使用前先获取已分配的账号；登录后，可访问内容由角色权限决定。",
+    "summary": "登录认证用于确认使用 POLYTRON ONE 的账号身份，是开展监控、调查和管理工作的起点。首次使用前，应向供应商或管理员获取已分配的账号，无需自行注册。登录后，角色决定可进入的页面和可执行的操作，相机资源权限则决定能够查看、回放或管理哪些设备。本章介绍首次登录、日常访问、凭据保存以及通过关联邮箱恢复密码的方式。开始值守或调查前，应分别检查所需模块、相机和操作是否可用；如果登录成功但资源缺失，应由授权管理员核查角色及资源范围。密码恢复只处理登录凭据，不会自动扩大现有权限。",
     "tags": [
       "登录认证",
       "概览",
@@ -190,7 +190,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "使用厂商或管理员分配的账号登录 POLYTRON ONE。身份验证通过后，平台按账号角色展示获准访问的页面、相机和操作。",
+    "summary": "使用供应商或管理员分配的账号登录后，即可访问岗位所需的视频资源和功能。平台先验证登录凭据，再根据账号角色和相机权限加载相应页面与操作入口。首次使用时，请准备用户名及初始密码，按页面提示更换密码，并确认实时视图、回放、通知或管理功能符合工作需要。“记住我”适用于本人控制的可信工作站，不宜用于公共、临时或多人共用设备。无法登录时，应先核对凭据和账号状态；能够登录但缺少页面或相机时，则需由管理员检查授权范围。离开共享设备或更换使用者前，应退出当前账号。",
     "tags": [
       "登录认证",
       "登录",
@@ -259,7 +259,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "忘记密码时，通过账号绑定邮箱验证身份并设置新密码。密码重置恢复登录访问，不改变原有角色和相机资源权限。",
+    "summary": "忘记密码适用于已有账号无法使用原密码登录、但仍能访问关联邮箱的情况。从登录页进入密码恢复后，填写账号关联邮箱，完成当前部署提供的验证码或链接验证，再设置符合页面要求的新密码。该流程恢复的是登录能力，不会更改原有角色、功能权限或相机访问范围。重置完成后，应返回登录页使用新密码登录，并检查常用模块和资源是否仍然可用。若未收到邮件或验证失败，请先核对邮箱、垃圾邮件和当前申请对应的验证信息；仍无法完成时，向管理员提供失败时间与错误提示，避免在求助信息中包含密码或有效验证码。",
     "tags": [
       "登录认证",
       "忘记密码",
@@ -327,7 +327,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "11.3",
     "readingTime": 3,
-    "summary": "主页汇总相机在线状态、CPU 与内存占用、磁盘使用情况及警报处理进度，便于值守和运维人员快速发现异常，再进入对应模块核查。",
+    "summary": "首页用于在交接班、日常巡检或配置变更后，快速了解平台当前的运行情况。页面集中展示相机在线状态、CPU 与内存占用、磁盘使用情况以及警报处理进度，帮助值守与运维人员确定下一步需要核查的对象。阅读指标时应结合实际症状：相机离线需要检查设备和链路，存储压力需要结合录像任务分析，待处理警报则需进入事件核查。随后可按问题进入相机管理、实时视图、回放、通知或系统日志。完成处置后，既要回到首页比较相关状态，也要在受影响模块中验证实际结果，避免仅凭计数变化判断问题已经解决。",
     "tags": [
       "首页",
       "概览",
@@ -381,7 +381,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "系统信息展示 CPU、内存和磁盘使用情况，帮助管理员与运维人员评估服务器资源压力，并排查视频卡顿、录像写入异常、回放缓慢或页面响应问题。",
+    "summary": "系统信息用于在画面卡顿、回放缓慢、录像写入失败或页面响应延迟时，判断平台是否存在资源压力。CPU、内存和磁盘指标反映视频、分析、录像及其他服务共同使用的运行资源，可帮助运维人员选择进一步排查的方向。应关注持续变化，并结合受影响相机、同时打开的画面、任务配置和日志分析原因，不宜将一次较高读数直接视为故障结论。检查存储时，还需同时考虑录像计划、保留周期、导出文件与可用空间。完成经批准的调整后，应观察资源变化并重新执行原来失败的操作；问题持续存在时，保留时间、症状和相关记录供运维人员继续分析。",
     "tags": [
       "首页",
       "系统信息",
@@ -435,7 +435,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "警报概览汇总警报总数、待处理数量和已解决数量，帮助值守人员判断处置压力，并进入通知列表核查需要优先处理的事件。",
+    "summary": "警报概览用于了解事件规模与处置进度，适合在值守期间、警报集中出现后或交接班时检查待完成的工作。通过比较总数、待处理和已处理数量，可以发现积压或异常增长，再进入通知列表核查具体记录。数量用于判断工作量，单个事件的优先级仍应结合等级、位置、类型和视频内容确定。打开事件后，应查看关联片段，按账号权限保存分类、备注及处理状态，并复核详情与相关统计是否反映已保存的结果。已阅读提醒或已停止提示音，并不代表事件风险已经消除，也不能替代后续调查和处置记录。",
     "tags": [
       "首页",
       "警报概览",
@@ -489,7 +489,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "相机信息汇总已接入设备的总数、在线数和离线数，用于日常巡检、接入验收及设备异常定位。",
+    "summary": "相机信息用于比较平台已登记的设备与现场实际需要的视频来源，帮助确认接入是否完整、异常影响哪些区域，以及维护或网络调整后是否出现状态变化。总数、在线数和离线数是定位问题范围的起点；多台设备同时离线时，还需排查共用电源、网络和平台服务。在相机管理中核对名称、地址、位置、协议、凭据和视频流地址后，应进入实时视图验证实际画面。在线状态只说明当前连接情况，不能代替录像覆盖或检测规则验证；需要确认历史资料时，仍应在回放中检查指定相机和时间段。",
     "tags": [
       "首页",
       "相机信息",
@@ -543,7 +543,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.1",
     "readingTime": 1,
-    "summary": "顶部工具栏提供主题切换、系统设置和注销等全局操作，无需返回主页即可使用。可见入口与账号权限有关。",
+    "summary": "顶部工具栏提供跨页面使用的全局操作入口，便于在实时视图、回放、相机、通知和设置等模块中调整显示偏好、进入管理设置或退出账号。日间与夜间主题应结合环境光线和工作内容选择，以便看清视频、字段与表格；具体的相机维护和事件处置仍应在对应模块内完成。管理设置的可见性与可执行操作由当前角色决定，进入入口并不代表具备所有配置权限。离开共享工作站、交接设备或切换使用者前，应退出当前会话并确认返回登录页。实际显示的全局控件，以当前账号权限和部署界面为准。",
     "tags": [
       "首页",
       "顶部菜单",
@@ -592,7 +592,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "11.2",
     "readingTime": 4,
-    "summary": "实时视图用于日常值守、区域巡查和警报现场核查。通过标签页组织相机，再按任务选择网格布局；需要时使用快照、分析、云台和 3D 关联定位并检查现场。",
+    "summary": "实时视图用于日常值守、区域巡查以及警报发生后的现场核查。可按楼层、区域或任务建立标签页，选择能够保留必要细节的网格布局，并为各画面分配相机。在设备、部署和权限支持的情况下，还可使用快照、分析标注、全屏、云台、多方向视图或 3D 关联理解现场。核查前应确认相机名称与位置，避免仅凭相似画面判断事件来源；需要记录处置结果时进入通知，需要检查历史经过时进入回放。常用标签页配置通常保存在当前浏览器中，应在实际值守工作站验证其可用性，不宜默认不同设备之间会同步。",
     "tags": [
       "实时视图",
       "概览",
@@ -641,7 +641,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "在实时视图中搜索相机并分配到目标网格，快速建立临时巡查、固定值守或多相机对比画面。",
+    "summary": "相机选择用于为巡查、区域核查或临时事件调查组织所需的实时视频。建议先确定标签页和网格，再选中目标画面，通过设备层级或受支持的搜索字段查找相机。添加后，视频会载入选中的画面；移除后，可在该位置分配其他设备。需要重新组织当前布局时，可清除全部相机，或按可用容量自动填充。每次分配后都应核对名称、位置、图像与状态，确认查看的是预期来源。若画面未加载，应进一步检查设备连接、视频流配置和账号权限，避免把加载异常直接理解为现场没有活动。",
     "tags": [
       "实时视图",
       "相机选择",
@@ -702,7 +702,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "网格布局决定实时视图中同屏显示的相机数量和画面大小。按任务在监控覆盖范围与细节可读性之间选择。",
+    "summary": "网格布局用于在监控覆盖范围与画面细节之间分配屏幕空间。多画面适合同时观察出入口、房间或相邻区域，单画面或全屏则便于核查人员、物体和警报现场。可根据屏幕大小与任务需要选择界面提供的布局，并在添加相机前确认目标画面。长期值守宜保持重要相机的位置清晰、稳定；设备较多时，可分散到不同任务标签页。空画面表示尚未分配相机，警报边框或标签则提示需要关注的来源。如果已分配相机但没有图像，应将设备、视频流和权限检查与布局选择分开处理。",
     "tags": [
       "实时视图",
       "网格",
@@ -751,7 +751,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "视图操作提供实时画面的快照、码流切换、分析、全屏、录像状态、多视图和相机详情等控制，便于边观察边核查现场。",
+    "summary": "视图操作用于从日常观察进一步检查与任务有关的现场细节。根据相机能力和账号权限，可抓取当前图像、切换视频流、查看分析叠加、进入全屏、核对相机资料，或打开受支持的 3D 与多方向视图。遇到警报时，应先确认视频来源，再选择有助于验证可见事实的操作。多路观看或网络受限时，子码流可降低带宽需求，但图像细节可能减少。录像指示用于了解当前状态，历史覆盖仍需进入回放验证。若某项控件不可用，应结合设备型号、协议、配置和权限判断，不能仅因按钮缺失便认定系统故障。",
     "tags": [
       "实时视图",
       "功能与控制",
@@ -800,7 +800,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "PTZ 控制用于远程调整兼容相机的方向、速度、变焦、对焦和光圈，适合跟随移动目标、检查远处细节或核查警报现场。",
+    "summary": "云台控制适用于对兼容相机进行远程调整，以核查警报区域、人工跟随移动目标或观察远处细节。操作前，应确认设备支持云台、控制协议已配置，并且当前账号具备相应权限。先通过方向与速度确定观察范围，再按设备支持情况调整变焦、焦距和光圈；每次调整后都应查看实时图像，确认目标仍在视野内且细节满足任务需要。中心按键、自动或手动对焦等行为可能因型号和配置而异。远程观察结果可用于现场处置判断；需要记录处理情况或补充历史经过时，还应进入警报详情或回放继续核查。",
     "tags": [
       "实时视图",
       "云台控制",
@@ -849,7 +849,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.1",
     "readingTime": 2,
-    "summary": "使用标签页保存不同相机组合和网格布局，在值守、巡查和临时事件之间快速切换。",
+    "summary": "标签页管理用于为不同区域、岗位和长期任务保留独立的相机组合，便于在常规值守与临时事件核查之间切换。每个标签页保存相机选择、网格和画面排列，名称宜简短并能体现用途；不再使用的临时视图应及时整理。配置后，可切换到其他标签页再返回，检查视频来源和位置是否符合预期。系统至少保留一个默认标签页，最后一个不能删除。配置通常存于当前浏览器的本地数据中，更换浏览器、设备或清理数据后可能丢失，因此应在实际值守工作站确认可用性，不宜将其理解为账号级跨设备同步。",
     "tags": [
       "实时视图",
       "标签管理",
@@ -919,7 +919,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "控制面板用于管理 POLYTRON 360° 相机的多视图、旋转方式、角度范围和保存位置，在重点区域固定观察与大范围巡视之间切换。",
+    "summary": "控制面板用于调整 POLYTRON 360° 相机的观察方向，在大厅、开放办公区、展区或仓库等空间中查看不同位置。可选中方向子视图作为主画面，固定关注某个点位，也可通过界面提供的常规或随机旋转模式巡视指定范围。速度和水平、垂直角度应围绕实际任务设置，避免持续转向无关区域。核查警报时，宜停止或限制旋转，以便连续观察目标。使用重置位置或保存位置后，还应更新预览并核对显示结果。具体可用控件、参数范围及保存行为，以当前部署界面和相机配置为准。",
     "tags": [
       "实时视图",
       "控制面板",
@@ -980,7 +980,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "11.4",
     "readingTime": 4,
-    "summary": "在同一工作台中搜索目标、定位历史录像并核查事件。限定相机和时间范围后，可从匹配结果进入多画面对照、时间轴核查及片段导出。",
+    "summary": "回放用于寻找相关录像、还原事件经过，并保留调查所需的时间片段。可先根据报告的相机、地点与时间确定范围，再描述画面中可观察的特征进行检索。缩略图、时间戳、位置和置信度帮助筛选候选结果，事件结论仍需结合触发前后的完整录像验证。需要比较不同视角时使用网格，需要按时间浏览匹配结果时使用时间轴，确认相关片段后再按需裁剪与下载。搜索结果时间轴与播放器内的录像进度条用途不同；可用录像还受计划、存储、保留周期和权限影响，因此应分别排查“没有匹配结果”与“没有历史录像”的原因。",
     "tags": [
       "回放",
       "智能搜索",
@@ -1034,7 +1034,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.4",
     "readingTime": 2,
-    "summary": "选择相关相机，并在单画面、四画面或九画面布局中核查历史录像。使用当前视图搜索，可将检索范围限制为已加载的相机。",
+    "summary": "搜索与多相机回放用于从相邻区域或不同视角核查同一事件。先载入与报告位置相关的相机并核对标签，再按细节需求选择单画面、四画面或九画面布局。若调查只涉及当前设备，可使用“当前视图中的相机”限定检索范围，减少无关来源。通过分组浏览、添加、移除、自动选择或清空操作，可逐步调整工作区。比较事件经过前，应分别确认各相机在目标时段确有可播放录像。多个画面同时载入，并不意味着录像天然同步；设备当前在线，也不能证明历史时段的资料完整。",
     "tags": [
       "回放",
       "多画面",
@@ -1085,7 +1085,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.4",
     "readingTime": 2,
-    "summary": "通过搜索结果中的缩略图、相机、位置、时间和置信度定位候选录像，再打开预览或进入回放核查。",
+    "summary": "智能搜索结果用于从检索返回的候选片段中，判断哪些录像值得进一步核查。每条结果结合缩略图、相机、位置、时间戳和置信度，帮助确认其是否属于正在调查的事件。可按最新或最早排序，分页浏览，预览片段，或选中结果在播放器中定位对应时间。结果过多或过少时，应结合可观察特征，调整描述、相机范围、时间区间或匹配阈值后重新搜索。置信度用于安排核查顺序，不能代替事实确认；在形成结论或导出证据前，应查看完整经过，并核对设备来源与时间是否一致。",
     "tags": [
       "回放",
       "智能搜索",
@@ -1136,7 +1136,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.4",
     "readingTime": 2,
-    "summary": "使用 Timeline 按时间顺序检查智能搜索命中结果，集中查看事件描述、置信度和带检测标注的画面。",
+    "summary": "时间轴视图用于按时间顺序浏览智能搜索匹配结果，了解候选观察何时发生，并查看各结果对应的上下文。完成回放检索后，可从网格切换至时间轴，选择节点核对时间、位置、置信度、事件描述和标注图像，确定下一步需要检查的录像。需要对比相机或查看连续经过时，再返回网格与播放器。页面时间轴组织的是搜索匹配，播放器中的录像时间轴则表示可用片段和当前播放位置。定位、判断缺口或准备导出时，应区分这两种用途，避免把一个匹配节点理解为周围所有时间都存在连续录像。",
     "tags": [
       "回放",
       "时间轴视图",
@@ -1191,7 +1191,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "11.2",
     "readingTime": 3,
-    "summary": "了解 AI 检测如何触发警报，以及值守人员如何通过实时提示、通知记录和关联视频完成事件核查与处理。",
+    "summary": "警报模块用于将检测记录转化为经过核实的事件判断与可追踪的处置结果。相机已启用的规则在满足配置条件时产生事件，实时提示和通知帮助值守人员定位来源，详情与关联录像则提供调查依据。应先核对相机、时间、位置和可见行为，再判断是否需要现场介入。等级反映风险，状态反映处置进度，两者应分别检查。按当前角色可用的操作保存分类、备注和结果后，还需复核事件记录。可用检测、片段时长、提示形式与处理状态依部署及现场流程而定，不能将阅读通知或停止提示音视为完成处置。",
     "tags": [
       "警报",
       "概览",
@@ -1252,7 +1252,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "沿检测、提示、核查和状态更新的完整路径处理警报，确保事件信息与实际处置结果对应。",
+    "summary": "警报触发流程说明一项相机观察如何进入值守人员的调查与处理工作。平台根据已启用的规则评估实时视频，在条件满足时生成记录，并通过画面提示、通知和详情提供相关信息。随后由操作人员确认来源、查看前后录像、评估事件，并按权限保存处置结果。该流程既适用于日常监控和事件复盘，也可用于排查未触发或反复触发的警报。新片段可能仍在处理中，时长应以项目配置为准。保存判断或状态变化后，应再次查看详情与相关列表，使接手人员能够区分已完成事项、已确认事实和仍待核实的问题。",
     "tags": [
       "警报",
       "报警触发流程",
@@ -1307,7 +1307,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "打开单条警报详情，核对事件信息与触发前后的视频，记录核查结果并更新处理状态。",
+    "summary": "查看警报详情适用于收到通知或画面提示后，需要进一步判断实际情况的场景。打开记录后，应将类型、时间、位置、相机、AI 标注及当前处理状态，与触发前后的录像进行对照。连续经过有助于区分真实事件与误报，并为是否派员到场、是否留存证据提供依据。根据角色可用的分类、状态和备注控件，记录已观察的事实、采取的动作与后续工作。若关联片段尚在处理中，应待其可用后补充核查。保存后再次确认详情与通知记录，并明确仍未解决的问题，使后续跟进有据可查。",
     "tags": [
       "警报",
       "视频片段查看",
@@ -1362,7 +1362,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "11.2",
     "readingTime": 4,
-    "summary": "集中维护相机资料、连接参数、3D 地址、录像计划和警报规则，为实时查看、历史回放、事件核查及资源权限提供准确的设备信息。",
+    "summary": "相机模块维护监控、录像核查和事件调查共同依赖的视频来源。授权人员可按名称、位置和分组组织设备，维护连接与视频流资料，并配置所需的录像计划、警报规则和 3D 关联。调整前，应先明确每台设备承担的任务；实时画面可播放，并不代表历史录像、检测或场景映射也已验证。分组用于帮助查找设备，角色与资源权限用于决定谁可以访问，两者需要分别维护。设备初次接入、物理位置变更或网络调整后，应核对图像及项目要求的下游功能，确保其他模块引用正确的视频来源与位置上下文。",
     "tags": [
       "相机",
       "概览",
@@ -1416,7 +1416,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "添加、查找和维护相机设备，核对连接、视频编码和图像参数，确保其他模块调用正确的视频资源。",
+    "summary": "相机管理用于接入新设备、维护已有视频来源，以及排查无法预览或连接异常的问题。开始前，应准备地址、协议、认证信息、视频流、安装位置与分组，并确认账号具备设备管理权限。页面将连接状态和设备资料，与当前相机集成支持的网络、编码及图像控件集中展示。修改连接或视频流参数后，应立即核对预览、设备名称和位置；项目需要录像、检测或 3D 联动时，还应分别验证这些功能。复制包含凭据的视频流地址时，应按敏感信息处理。可调整的参数以实际型号、协议和部署界面为准。",
     "tags": [
       "相机",
       "相机管理",
@@ -1479,7 +1479,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.1",
     "readingTime": 3,
-    "summary": "按相机和星期设置录像时段，并将相同策略复制到其他设备。保存后通过实际回放检查录像覆盖情况。",
+    "summary": "录像计划用于确定相机应在哪些时段保存画面，以支持回放、事件调查和证据留存。应结合区域风险与营业时间，按每周各日配置连续、工作时段、非工作时段或其他所需区间。扩大覆盖前，需要同时评估相机数量、码率、存储容量和保留要求；复制计划时，仅选择需求一致的设备，节假日也应检查实际日期安排，不能默认系统自动处理。保存计划表示已设定预期录像时段，实际资料仍依赖设备连接和存储条件。配置生效且目标区间经过后，应进入回放抽查，确认相应录像存在并能够正常播放。",
     "tags": [
       "相机",
       "录像计划",
@@ -1556,7 +1556,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "11.2",
     "readingTime": 14,
-    "summary": "为相机选择检测算法、绘制区域或检测线，并配置生效时间和触发条件。部署后通过实际画面与通知验证规则。",
+    "summary": "警报设置用于将现场监控要求转化为可验证、可复核的相机规则。先明确关注的行为、相关区域或越界线，以及需要生效的日期和时段，再从当前部署的检测库中选择能力，按该规则支持的方向、阈值、持续时间等控件进行配置。本页检测指南解释文档涉及的 12 个名称，以及各类观察能够提供的证据。部署后，应在适当条件下对符合与不符合规则的示例进行核查，并确认来源、时间、通知和录像是否一致。检测到活动后仍需结合现场上下文判断，不能将参数保存或规则启用等同于已经验证实际效果。",
     "tags": [
       "相机",
       "报警设置",
@@ -1845,7 +1845,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "11.2",
     "readingTime": 4,
-    "summary": "集中查看和筛选警报，按风险安排核查顺序，并通过详情中的分类、备注和状态追踪处理进度。",
+    "summary": "通知模块是查找警报、安排调查和跟踪已保存处置结果的工作队列。列表汇集事件类型、时间、位置、相机、等级与状态，可用于值守时查看新活动、处理积压，或按已知时段追查历史记录。应围绕任务设置筛选条件，打开相关详情，再将录像与 AI 标注结合起来判断。自动刷新适合持续接收新记录，深入核查时可暂停刷新以保持列表位置稳定。保存发现和状态后，应复核事件记录。阅读通知或停止提示并不等于完成响应；状态变化后，当前筛选也可能使记录不再出现在原队列中。",
     "tags": [
       "通知",
       "概览",
@@ -1904,7 +1904,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "通过搜索、组合筛选和分页查找通知，查看事件状态，并打开详情核查关联视频与处理记录。",
+    "summary": "通知中心用于查找值守、处置复核或历史调查所需的事件记录。可从已知相机、位置、关键词或时间区间入手，再组合界面提供的类型与状态条件缩小范围。查看列表时，应将等级与处置进度分开理解，必要时翻页并通过“查看”进入录像、备注和事件详情。持续值守可开启自动刷新；需要稳定地检查一组记录时，可暂时关闭。若预期事件未出现，应逐项放宽条件，并核查时区与相机访问权限。完成事件处理后，还应回到相关记录确认状态和备注已保存，而不只是观察其是否仍出现在当前筛选结果中。",
     "tags": [
       "通知",
       "搜索和筛选",
@@ -1958,7 +1958,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 2,
-    "summary": "从通知列表打开详情，结合事件资料、AI 标注和视频核查事实，再保存准确的分类、状态和处理备注。",
+    "summary": "通知详情用于从列表中的单条记录，进入可核实事件经过与处理情况的工作页面。选择“查看”后，应先确认警报编号、相机、时间、位置、检测类型和当前状态，再检查关联录像及 AI 标注。通过触发前后的连续画面理解上下文，并按权限使用分类、备注与结果操作，保存实际发现。如果片段仍在处理中，应待其可用后继续核查，不宜立即认定资料缺失。保存后，复核详情和相关通知状态；对尚不明确的事项，应记录缺少的信息与后续检查，使其他人员能够基于已保存的事实继续处理。",
     "tags": [
       "通知",
       "查看通知",
@@ -2012,7 +2012,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "11.2",
     "readingTime": 4,
-    "summary": "集中维护显示偏好、账号、角色权限、存储策略和日志。修改前确认影响范围，保存后核对相关用户与业务流程。",
+    "summary": "设置模块维护监控与调查工作所需的访问和运行条件。授权人员可管理账号、角色权限、相机范围、存储、保留周期及日志；显示偏好和当前账号资料则支持日常使用。保存变更前，应明确影响哪些人员、设备与数据：共享角色可能影响多名用户，保留周期变化可能缩短可追查的录像或日志历史。验证时应回到实际业务，例如检查受影响账号的访问、已写入录像或相关日志记录。可用存储方式与管理控件依当前部署而定。涉及范围较大的调整应遵循项目变更流程，并在缩短保留周期前保存仍需使用的资料。",
     "tags": [
       "设置",
       "概览",
@@ -2066,7 +2066,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 3,
-    "summary": "配置界面偏好、当前账号信息、存储容量和视频及日志保留周期，并验证变更对录像与运行记录的影响。",
+    "summary": "系统设置用于使平台显示偏好、存储配置和保留周期符合现场工作要求。显示选项与当前账号信息主要服务于正在使用工作站的人员；容量上限、存储目标、录像和日志保留时间则可能影响更广泛的记录与调查流程。进行管理调整前，应核对项目要求、现有值和服务器资源。使用 SFTP 等受支持的外部目标时，还需验证网络、路径和写入权限。保存后应检查预期数据及相关错误。恢复旧配置无法重新生成已经删除的资料，因此在缩短周期或改变容量前，应先保存未结调查仍需使用的录像和日志。",
     "tags": [
       "设置",
       "系统设置",
@@ -2139,7 +2139,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 3,
-    "summary": "创建和维护用户账号，分配合适角色，并在人员或职责变化时及时调整访问范围。",
+    "summary": "账号设置用于为每位使用者建立可识别的账号，并在岗位变化时维护访问范围。具备账号管理权限的管理员可创建用户，维护页面支持的邮箱、凭据、角色和账号状态，并在人员离场或任务结束后撤销不再需要的访问。选择角色前，应先明确工作任务与相机区域，再检查角色实际授予的功能和资源权限。保存后，由用户登录验证必需的访问与预期限制。调整单个人员时，应区分账号身份与共享角色配置，避免影响其他使用者。密码维护应使用页面提供的重置或恢复方式，不应在截图、备注或交接记录中保留明文凭据。",
     "tags": [
       "设置",
       "账号设置",
@@ -2212,7 +2212,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 3,
-    "summary": "通过功能权限与相机资源权限定义角色，再将角色分配给用户，按岗位控制可访问的页面、操作与视频资源。",
+    "summary": "用户角色设置用于定义一类用户能够完成哪些任务，以及这些任务适用于哪些相机。功能权限控制页面与操作，资源权限控制这些功能中的设备范围，两方面都需要配置和验证。应先列明岗位职责，再启用所需控件与设备，最后通过账号设置分配角色。管理员、操作员等名称只是职责标识，不能代替对实际权限的检查。共享角色一旦修改，可能影响全部关联用户，因此保存前应明确受影响人员。完成后，应同时验证必需访问与预期限制，既检查模块是否可见，也检查模块内相机范围是否正确。",
     "tags": [
       "设置",
       "用户角色设置",
@@ -2286,7 +2286,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.2",
     "readingTime": 3,
-    "summary": "按时间、类型和关键词定位系统、设备、录像及用户活动记录，用于排查问题、核对变更和开展运维审计。",
+    "summary": "系统日志用于通过问题发生前后的已记录事件，调查故障或复核配置变更。可从受影响的相机、账号、服务、时间和可见症状入手，再使用页面提供的类型、结果和关键词缩小范围。连接、录像、系统及用户活动记录有助于梳理经过，但事件覆盖与字段详细程度取决于部署。应将相关条目按时间关联，并回到相机、录像、存储或账号等实际流程中验证判断。需要进一步分析时，可导出相关区间，同时保留错误文本和已完成检查。日志可能包含设备与账号信息，访问、共享和保留均应遵循项目要求。",
     "tags": [
       "设置",
       "系统日志",
@@ -2345,7 +2345,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 2,
-    "summary": "正式值守前，验证账号权限、实时视频、历史录像、AI 检测与通知处理链路，并记录需要修复的项目。",
+    "summary": "入门检查清单适用于首次部署、工作流程调整或正式值守前，确认关键路径已经具备使用条件。可与管理员或交付人员共同选择已授权账号、已知相机、已有录像时段和受支持的检测规则，将登录权限、实时视频、录像播放、检测结果及通知响应作为同一路径中的独立检查项。涉及检测的测试，应在获准且可控的条件下协调进行。发现例外时，记录相机、测试时间、结果和佐证，并按项目流程安排跟进。是否可投入使用，应根据岗位所需流程能否完整完成判断，而不只取决于能否登录或播放一路实时画面。",
     "tags": [
       "快速开始",
       "检查清单",
@@ -2381,7 +2381,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 2,
-    "summary": "核查浏览器、网络、视频接入、时间同步和存储条件，确认部署环境能够支持实际监控与留存任务。",
+    "summary": "系统要求与兼容性用于验证文档所述工作流程实际运行的环境。检查范围包括工作站浏览器及媒体支持、相机与平台服务之间的连接、已部署视频流格式、时钟和时区一致性，以及满足录像负载的存储条件。测试应采用值守人员实际需要的相机数量和布局，同时覆盖回放与文件下载。本页提供核查方向，不规定适用于所有项目的统一硬件或浏览器版本；已有项目标准时，应以该基线组织验证。失败时，应保留浏览器、操作系统、相机、协议、编码、时间和错误信息，以便复现问题，同时避免共享完整凭据。",
     "tags": [
       "系统要求",
       "兼容性",
@@ -2427,7 +2427,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 3,
-    "summary": "从发生异常的环节入手，逐项检查登录、权限、视频、录像、警报、通知与导出，并保留升级处理所需的信息。",
+    "summary": "故障排查用于先找出业务路径中的失败环节，再决定需要检查或调整的配置。应确认症状影响的是单个账号、单台相机、某段录像还是整个平台，并记录发生时间与可见错误。本页涵盖登录权限、实时视频、录像可用性、检测、通知、搜索和导出问题。建议从最接近故障的条件入手，每次只改变一项相关因素，再重复原操作验证恢复。应区分搜索无匹配与录像缺失，也应区分通知被筛除与事件未生成。需要升级处理时，提交实际结果、已完成检查和佐证，使接手人员能够继续调查，而不必重新确认基础情况。",
     "tags": [
       "故障排查",
       "运维",
@@ -2478,7 +2478,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 2,
-    "summary": "结合人员安全、区域风险和事件进展安排警报优先级，按项目流程升级，并记录核查和处置结果。",
+    "summary": "警报等级与响应指引用于根据人员、关键区域及现场运行面临的风险，安排事件核查顺序。应结合行为、位置、持续时间、影响和发展情况进行判断，再按项目流程决定是否升级。等级表达风险，待处理、已确认或已关闭等状态表达工作进度，不能相互替代。采取行动前应同时阅读两类信息，并通过可用事件字段与现场流程记录已核实情况、已采取措施、尚存疑问和后续要求。本页的响应顺序用于辅助判断，不规定所有项目通用的处理时限，也不替代项目的人员安排、服务约定或应急程序。",
     "tags": [
       "警报等级",
       "响应标准",
@@ -2524,7 +2524,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 2,
-    "summary": "从事件定位、录像核查和裁剪导出，到文件复核、登记与保存，建立清晰可追溯的证据留存记录。",
+    "summary": "录像导出与证据留存适用于将已核实片段用于调查、复盘、报告或问题升级。应先确认有权访问来源相机和录像，观看前后经过，再设置能够保留必要上下文、同时避免无关内容的起止点。导出前检查浏览器下载许可、可用空间和目标位置；文件完成后，应实际打开并核对相机图像、时间戳、时长和完整播放情况。通过项目流程登记事件关联、录像区间、导出人及存放位置，使文件能够追溯到原始事件。支持格式与限制以部署为准，接收者权限、必要处理和审批则应遵循项目共享要求。",
     "tags": [
       "录像导出",
       "证据留存",
@@ -2570,7 +2570,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 2,
-    "summary": "按岗位管理访问，规范共享终端与导出操作，并根据项目需求设置录像、警报和日志留存。",
+    "summary": "安全与数据保留用于使账号权限、工作站使用和资料保存方式，与实际岗位职责保持一致。应仅授予任务所需的功能与相机范围，定期复核共享及高权限访问，并在人员或职责变化后及时调整。录像、事件、备注和日志可能具有不同的调查用途与保留周期，需要结合容量和项目政策分别检查；缩短周期前，应先保存未结调查所需记录。导出与共享应限定必要范围，使用获准方式，并保留来源及去向。本页提供操作原则，不代表所有处理工具均内置于产品，也不规定统一安全规则；具体配置应以适用的项目政策与要求为准。",
     "tags": [
       "安全",
       "数据保留",
@@ -2622,7 +2622,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 2,
-    "summary": "查找账号、权限、视频、录像、AI 警报、通知和导出的常见问题，并按提示转到相关模块继续核查。",
+    "summary": "常见问题用于为账号、相机、录像、警报、通知和导出中的重复问题提供下一步检查方向。答案会说明容易混淆的关系：能进入页面未必能访问其中所有相机，设备在线不代表视频或历史录像一定可用，检测标签和置信度也不能替代录像核查。可根据实际症状选择问题，再进入对应功能指南或故障排查查看完整处理路径。若建议检查仍无法解决，应向管理员提供页面、发生时间及时区、相机、错误信息和已完成步骤，以减少重复确认。问题报告中不应包含密码、有效令牌或带有完整认证信息的视频流地址。",
     "tags": [
       "FAQ",
       "常见问题",
@@ -2668,7 +2668,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "10.8",
     "readingTime": 7,
-    "summary": "POLYTRON ONE is an AI-native video management system (VMS) that brings real-time video analytics, spatial understanding, and intelligent automation into one platform. Powered by the Multi-Scale Attention Fusion Network (MAFN) and the patented APEX Engine™, it combines spatial and semantic cues for context-aware visual analysis. The platform provides the foundation for an Agentic Vision Intelligence System across security, retail, logistics, and smart-city operations.",
+    "summary": "POLYTRON ONE is an AI-native video management system (VMS) for teams that need to monitor activity, investigate events, and coordinate a response across connected camera environments. It brings real-time video analytics, spatial understanding, and intelligent automation into one platform. The Multi-Scale Attention Fusion Network (MAFN) and patented APEX Engine™ combine spatial and semantic cues for context-aware visual analysis, providing the foundation for an Agentic Vision Intelligence System. In operational use, teams organize video sources, configure deployed detection rules, review alarms against live and recorded footage, and retain their findings. Security, retail, logistics, and smart-city workflows depend on the capabilities, integrations, permissions, and response procedures configured for each deployment.",
     "tags": [
       "System Overview",
       "Overview",
@@ -2764,7 +2764,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "10.8",
     "readingTime": 3,
-    "summary": "Use your assigned account to access POLYTRON ONE. The account’s role determines which pages, cameras, and actions are available. This chapter covers sign-in, saved credentials, and password recovery.",
+    "summary": "Use Login Authentication to establish the account you will use for monitoring, investigation, or administration in POLYTRON ONE. Obtain an assigned account from the supplier or administrator; self-registration is not required. After sign-in, the assigned role determines the available pages and actions, while camera permissions determine which video resources you can use. This chapter covers initial access, daily sign-in, saved credentials, and recovery through the email address linked to the account. Verify the required modules, cameras, and actions before starting work. If access is incomplete, have an authorized administrator inspect the role and resource scope; resetting a password does not change those permissions.",
     "tags": [
       "Login Authentication",
       "Overview",
@@ -2804,7 +2804,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Sign in with the account assigned by your supplier or administrator. POLYTRON ONE uses the account’s role to determine which pages, cameras, and actions you can access.",
+    "summary": "Sign in with the account assigned by your supplier or administrator to access the cameras and tools needed for your work. The platform authenticates the credentials, then loads the pages, resources, and actions permitted by the account’s role. For first use, prepare the username and initial password, change the password if prompted, and check access to the required modules and cameras. Use Remember Me only on a trusted workstation under your control. If sign-in fails, check the credentials and account state; if sign-in succeeds but a page or camera is missing, ask an administrator to review permissions. Sign out when leaving a shared device or changing users.",
     "tags": [
       "Login Authentication",
       "Login",
@@ -2880,7 +2880,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Reset a forgotten password through the email address linked to your account. The reset restores sign-in access and preserves your existing role and camera permissions.",
+    "summary": "Use Forgot Password when you cannot remember the password for an existing account and still have access to its linked email address. From the login page, submit that address, complete the verification provided by the deployment, and set a password that meets the displayed requirements. The recovery process restores the ability to sign in without changing the account’s role, feature permissions, or camera access. After resetting, return to the login page and check that your usual modules and resources remain available. If the email does not arrive or verification fails, check the address, spam folder, and latest code or link before asking an administrator to investigate.",
     "tags": [
       "Login Authentication",
       "Forgot Password",
@@ -2941,7 +2941,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "10.9",
     "readingTime": 3,
-    "summary": "Start on Home to check camera availability, CPU and memory use, disk capacity, and pending alarms. Open the relevant module to investigate a device issue, resource constraint, or event that needs a response.",
+    "summary": "Use Home to establish the platform’s operating state at the start of a shift or after a configuration change. The page brings camera availability, CPU and memory use, disk usage, and alarm progress together so operators and operations staff can decide what needs attention. Compare related indicators before choosing the next check: offline devices call for a connection review, storage pressure may affect recording, and pending alarms require event investigation. Continue in Camera Management, Live View, Playback, Notifications, or System Logs as appropriate. Return to Home after the action to compare the status, and verify recovery in the affected workflow rather than relying on a changed count alone.",
     "tags": [
       "Home",
       "Overview",
@@ -2995,7 +2995,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Use CPU, memory, and disk indicators to investigate live-video stutter, failed recording writes, slow playback, or delayed page responses. Compare resource readings with the affected cameras, tasks, and logs.",
+    "summary": "Use System Information to assess resource conditions when live video stutters, playback slows, recording writes fail, or the interface responds slowly. CPU, memory, and disk indicators provide a starting point for reviewing the load shared by video, analysis, recording, and other services. Compare sustained readings with the affected cameras, concurrent views, task configuration, and logs; a single high reading does not establish the cause. Storage checks should include recording schedules, retention, exports, and available capacity. After an approved adjustment, observe the indicators and repeat the operation that failed. Retain the relevant times and symptoms when operations staff need to investigate further.",
     "tags": [
       "Home",
       "System Information",
@@ -3049,7 +3049,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Compare total, pending, and resolved alarms to assess outstanding work. Use the notification list to investigate individual events and record their outcomes.",
+    "summary": "Use Alarm Overview to understand the volume of recorded events and the response work still outstanding. Compare total, pending, and resolved alarms during a shift, after a burst of activity, or when reviewing handover work. These counts help identify a backlog or unusual growth, but the severity, location, event type, and footage determine how each record should be prioritized. Open the notification list to investigate the relevant events, review their associated clips, and save the classification, notes, and response status allowed by your role. Recheck the record and related overview after saving. Reading a reminder or silencing an alert does not complete the underlying response.",
     "tags": [
       "Home",
       "Alarm Overview",
@@ -3103,7 +3103,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Check total, online, and offline camera counts to verify device onboarding, identify outages, and scope an investigation.",
+    "summary": "Use Camera Information to compare the cameras registered with the platform against the devices expected at the site. Total, online, and offline counts help scope an outage, check onboarding, and identify changes after maintenance or a network adjustment. If several devices fail together, investigate shared power, network, or service dependencies as well as individual camera settings. Open Camera Management to check the affected names, addresses, locations, protocols, credentials, and stream URLs, then test the actual image in Live View. Online status establishes a connection state; recording coverage and detection operation still need separate checks. Historical footage must be verified for the required camera and interval in Playback.",
     "tags": [
       "Home",
       "Camera Information",
@@ -3157,7 +3157,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.7",
     "readingTime": 1,
-    "summary": "Use the top toolbar to change the theme, open system settings, or sign out from the current module. Your role determines which controls are available.",
+    "summary": "Use the Top Toolbar for global actions while working in Live View, Playback, Cameras, notifications, or settings. It provides access to the available display preferences, administrative settings, and sign-out without requiring you to treat those actions as camera or event operations. Choose a day or night theme that keeps footage, fields, and tables readable in the working environment. Open system settings only for the administrative task your role permits. Before leaving a shared workstation, handing over the device, or switching users, sign out and confirm that the login page is shown. The controls visible in the toolbar depend on the current account and deployment.",
     "tags": [
       "Home",
       "Top Menu",
@@ -3206,7 +3206,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "10.8",
     "readingTime": 4,
-    "summary": "Monitor routine activity, inspect an area, or verify an alarm in Live View. Arrange cameras in task-specific tabs and grids, then use the available video, PTZ, analysis, and 3D controls to examine the scene.",
+    "summary": "Use Live View for routine monitoring, area inspections, and immediate verification of an alarm. Build a workspace around the location or task by organizing cameras into tabs and choosing a grid that preserves the detail operators need. The selected feed can provide snapshots, analysis annotations, fullscreen inspection, PTZ, multiple directional views, or 3D context where the device, deployment, and permissions support them. Confirm camera names and locations before interpreting the scene. Use Notifications to document an event and Playback to examine its recorded sequence. Recurring tab arrangements are normally stored in the current browser, so check the intended workstation rather than assuming the same view is available across devices.",
     "tags": [
       "Live View",
       "Overview",
@@ -3255,7 +3255,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Find cameras and assign them to Live View panes. Build a view for routine monitoring, inspect a specific location, or compare several feeds.",
+    "summary": "Use Camera Selection to build the set of live feeds needed for a patrol, an area check, or an incident review. Choose the tab and grid first, then select a destination pane and find the device through the camera hierarchy or supported search fields. Adding a camera loads its image into the selected pane; removing it frees that pane for another source. Clear All Cameras helps rebuild the current layout, while automatic filling uses available devices up to its capacity. Check the camera name, location, image, and state after assignment. If a feed does not load, review connectivity, stream settings, and permissions before treating the scene as unavailable.",
     "tags": [
       "Live View",
       "Camera Selection",
@@ -3316,7 +3316,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Choose how many camera feeds to display in Live View and how much space each feed receives. Use a layout that preserves the detail needed for the monitoring task.",
+    "summary": "Use Grid to balance the number of visible cameras with the detail needed to monitor them. A multi-pane layout provides coverage across entrances, rooms, or adjacent areas; a single pane or fullscreen view is better suited to inspecting a person, object, or alarm scene. Choose among the layouts provided by the interface and select the destination pane before assigning a camera. Use clear, consistent positions for recurring monitoring tasks, and divide larger camera sets across tabs when needed. An empty pane is an unassigned space, while an alarm indicator identifies a feed for attention. If an assigned pane has no image, check the source and connection separately from the layout.",
     "tags": [
       "Live View",
       "Grid",
@@ -3377,7 +3377,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Inspect live video with snapshots, stream switching, analysis, fullscreen, recording indicators, multiple views, and camera details. Available controls depend on the device and your access.",
+    "summary": "Use View Operations to move from watching a feed to inspecting the details relevant to your task. Depending on the camera and your permissions, you can capture the current image, change streams, inspect analysis overlays, enter fullscreen, review camera information, or open supported 3D and multiple-view controls. For an alarm, first verify the source, then choose the action that helps establish what is visible. A substream can reduce bandwidth demand when several feeds are open, with a tradeoff in image detail. Check recording indicators as a current-state cue and use Playback to verify historical coverage. Unavailable controls should be checked against device capabilities, protocol, configuration, and access.",
     "tags": [
       "Live View",
       "Functions and Controls",
@@ -3438,7 +3438,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Remotely adjust a compatible camera to follow a target, inspect distant detail, or verify an alarm. PTZ Control provides direction, speed, zoom, focus, and iris controls where supported.",
+    "summary": "Use PTZ Control when a compatible camera needs to be repositioned to inspect an alarm area, follow a moving target manually, or examine distant detail. Before operating it, confirm PTZ support, the control protocol, and the account’s permissions. Direction and movement speed establish the view; zoom, focus, and iris controls refine the image where the model supports them. Observe the live feed after each adjustment so the target remains visible and the resulting scene can be assessed. Available center-button behavior and lens controls vary by device and configuration. Use the verified image to support the site’s response procedure, and continue in alarm details or Playback when the task requires a response record or historical context.",
     "tags": [
       "Live View",
       "PTZ Control",
@@ -3499,7 +3499,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.7",
     "readingTime": 2,
-    "summary": "Keep separate camera arrangements and grid layouts for recurring tasks. Switch tabs to move between routine monitoring, area inspections, and incident review.",
+    "summary": "Use Tab Management to keep separate camera arrangements for recurring areas, responsibilities, and monitoring tasks. Each tab retains its camera selection, grid, and pane arrangement, allowing you to switch between a routine view and a focused incident workspace. Give tabs short names that identify their purpose, remove obsolete temporary views, and verify the feeds after switching away and returning. At least one default tab remains, so the last tab cannot be deleted. Configuration is normally stored in the current browser’s local data; changing devices or browsers, or clearing that data, may remove it. Verify the required views on the workstation used for the shift rather than assuming account-level synchronization.",
     "tags": [
       "Live View",
       "Tab Management",
@@ -3570,7 +3570,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Use the Control Panel to inspect different directions from a POLYTRON 360° camera. Choose a fixed view or rotation mode, set the viewing range, and save a useful position.",
+    "summary": "Use the Control Panel to inspect different directions from a POLYTRON 360° camera without losing the context of the monitored space. Select a directional subview as the main view, keep the camera view fixed on a point of interest, or use the available regular and random rotation modes to inspect a defined range. Speed and angle controls determine the movement appropriate to the task. For an alarm, stop or limit rotation so the relevant area can be reviewed consistently. Use Reset Position or Save Position as needed, then update the preview and check the result. Available controls and their ranges follow the deployed interface and supported camera configuration.",
     "tags": [
       "Live View",
       "Control Panel",
@@ -3643,7 +3643,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "11.4",
     "readingTime": 4,
-    "summary": "Find a subject in recorded footage, verify the sequence of an event, and retain the relevant clip. Set the camera and time range, review search matches, then compare recordings or export footage.",
+    "summary": "Use Playback to locate relevant recorded footage, reconstruct an event, and retain the sequence needed for review. Start with the reported camera, location, and time, then describe observable characteristics and run a search within the required scope. Thumbnails, timestamps, locations, and confidence scores help identify candidates; the recording establishes what was visible before, during, and after the event. Compare cameras in Grid or browse search matches chronologically in Timeline, then trim and download verified footage when required. Search-result Timeline and a player’s recording timeline serve different purposes. Available footage depends on recording schedules, storage, retention, and permissions, so an empty search and a missing recording require separate checks.",
     "tags": [
       "Playback",
       "Intelligent Search",
@@ -3697,7 +3697,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.4",
     "readingTime": 2,
-    "summary": "Compare recordings from the cameras around an event in a one-, four-, or nine-view layout. Limit a search to Cameras in Current View when the investigation concerns only the cameras you have loaded.",
+    "summary": "Use Search & Multi-Camera Playback to examine an event across nearby areas or different viewpoints. Load the cameras relevant to the reported location, verify their labels, and choose a one-, four-, or nine-view layout that keeps the required detail readable. When the investigation concerns only those devices, Cameras in Current View limits the search to the loaded set. Browse groups, add or remove cameras, or use the automatic selection and clearing controls to adjust the workspace. Compare each recording for the required interval before interpreting the sequence across views. Multiple loaded cameras do not by themselves establish synchronized playback, and a current online indicator does not establish historical coverage.",
     "tags": [
       "Playback",
       "Multi-camera",
@@ -3748,7 +3748,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.4",
     "readingTime": 2,
-    "summary": "Identify candidate recordings using thumbnails, camera details, locations, timestamps, and confidence scores. Preview a clip or open its recording in Playback to verify the event.",
+    "summary": "Use Intelligent Search Results to decide which recordings deserve closer review after a search. Each candidate combines a thumbnail with the camera, location, timestamp, and confidence score, helping you check whether it belongs to the event you are investigating. Sort by Newest or Oldest, browse additional pages, preview a clip, or select a result to load its recording at the associated time. If the results are too broad or too narrow, revise the observable description, camera scope, interval, or match threshold and search again. Treat confidence as a way to prioritize review rather than proof of an event, and verify the recorded sequence before drawing a conclusion or exporting evidence.",
     "tags": [
       "Playback",
       "Intelligent Search",
@@ -3799,7 +3799,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "11.4",
     "readingTime": 2,
-    "summary": "Review intelligent search matches in chronological order in Timeline. Open a result to inspect its event description, confidence score, and annotated image, then return to the recording when further verification is needed.",
+    "summary": "Use Timeline View to review intelligent search matches in time order and inspect the context attached to each result. After running a search in Playback, switch from Grid to Timeline and select a node to examine its timestamp, location, confidence score, event description, and annotated image. This view is useful for comparing when candidate observations occurred and deciding which recording to investigate next. Return to Grid when you need a camera comparison or the surrounding video sequence. Timeline represents search matches; the recording timeline inside a player represents available footage and playback position. Keep that distinction when seeking, reviewing gaps, or preparing an export so a result node is not mistaken for continuous recording coverage.",
     "tags": [
       "Playback",
       "Timeline View",
@@ -3854,7 +3854,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "10.8",
     "readingTime": 3,
-    "summary": "Verify camera detections, assess the risk, and record the response. Use live indicators to locate an alarm, then review its notification, event details, and associated footage.",
+    "summary": "Use Alarms to turn a detection record into a verified finding and a documented response. Enabled camera rules identify activity that meets their configured conditions; live indicators and notifications help operators locate the event, while details and associated footage provide the basis for investigation. Check the camera, time, location, and observed behavior before deciding whether the event needs intervention. Review severity as the risk assessment and status as the progress of the response. Save the classification, notes, and outcome using the actions available to your role, then verify the record. Available detections, clip intervals, indicators, and response states depend on the deployment and the site’s procedures.",
     "tags": [
       "Alarm",
       "Overview",
@@ -3915,7 +3915,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Follow an alarm from rule evaluation through investigation and response. Keep the event record current so the next operator can see what was verified, what action was taken, and what remains open.",
+    "summary": "Use Alarm Triggering Process to understand how a configured camera observation becomes work for an operator. The platform evaluates live video against enabled rules, creates a record when the conditions are met, and presents related information through live indicators, notifications, and alarm details. The operator then checks the source and footage, assesses the event, and records the response using permitted actions. Follow this sequence during monitoring, incident review, and investigation of missing or repeated alarms. A newly generated clip may still be processing, and its duration follows project configuration. After saving a finding or status change, recheck the details and relevant list so the next operator can distinguish completed work from unresolved questions.",
     "tags": [
       "Alarm",
       "Alarm Triggering Process",
@@ -3970,7 +3970,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Open an alarm to establish what happened, document the findings, and update the response status. Review event details together with the footage around the trigger.",
+    "summary": "Use View Alarm Details when a notification or live indicator needs investigation beyond its initial label. Open the record to compare the event type, timestamp, location, camera, AI annotations, and current response state with the footage around the trigger. The surrounding sequence helps distinguish a valid incident from a false alarm and supports decisions about on-site action or evidence retention. Use the classification, status, and note controls available to your role to record what was observed and what was done. If the associated clip is still processing, return when it becomes available. After saving, verify the details and notification record, and state any unresolved questions so follow-up does not depend on memory.",
     "tags": [
       "Alarm",
       "Video Clip Viewing",
@@ -4025,7 +4025,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "10.8",
     "readingTime": 4,
-    "summary": "Maintain the device information and configuration used by live monitoring, playback, and event investigation. Manage camera connections, 3D links, recording schedules, alarm rules, and role-based resource access.",
+    "summary": "Use Cameras to maintain the video sources on which monitoring, recording review, and event investigation depend. Authorized users organize devices by name, location, and group, maintain connection and stream details, and configure the required recording schedules, alarm rules, and 3D links. Establish the intended workflow for each camera before changing its settings: a working live feed does not by itself validate historical recording, detection, or scene mapping. Camera grouping helps users find devices, while role and resource permissions define who can access them. After onboarding, a physical move, or a network change, verify the image and each required downstream function so other modules use the correct source and context.",
     "tags": [
       "Camera",
       "Overview",
@@ -4079,7 +4079,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Connect and maintain cameras so monitoring, recording, and analysis use the intended video source. Find devices, update connection details, and verify supported encoding and image settings.",
+    "summary": "Use Camera Management to connect a new device, maintain an existing source, or investigate an unavailable feed. Prepare the camera’s address, protocol, credentials, stream configuration, location, and group, and confirm that the account has device-management permission. The page brings connection state and device information together with the network, encoding, and image controls exposed by the supported camera integration. After changing a connection or stream setting, check the live preview against the device’s name and location. Verify recording, detection, and 3D behavior separately when the project requires them. Treat copied stream URLs containing credentials as sensitive information, and use only the controls available for the deployed model and protocol.",
     "tags": [
       "Camera",
       "Camera Management",
@@ -4142,7 +4142,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.7",
     "readingTime": 3,
-    "summary": "Define when each camera records footage for playback and investigation. Set daily intervals across the week, copy schedules where requirements match, and verify coverage in the recorded footage.",
+    "summary": "Use Recording Schedule to define when a camera should retain footage for playback, incident investigation, and evidence collection. Set coverage around the area’s operating hours and risks, using daily intervals across the week for continuous, working-hours, after-hours, or other required recording. Check camera count, bitrate, storage capacity, and retention needs before extending coverage. Copy a schedule only to devices with the same requirements, and review the relevant dates rather than assuming automatic holiday handling. Saving a schedule establishes the intended periods; actual footage also depends on camera connectivity and storage. Once a configured interval has elapsed, play a sample in Playback to verify that the required recording exists and is usable.",
     "tags": [
       "Camera",
       "Recording Schedule",
@@ -4208,7 +4208,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "10.8",
     "readingTime": 13,
-    "summary": "Configure a camera to detect a defined behavior in a defined area and time period. Choose supported algorithms, draw regions or crossing lines, deploy the rules, and verify the resulting alarms.",
+    "summary": "Use Alarm Settings to translate a monitoring requirement into a camera rule that can be tested and reviewed. Define the behavior of interest, the relevant region or crossing line, and the days and times when the observation matters. Select a detection from the deployed library, then configure only the directions, thresholds, durations, and other controls supported by that rule. The Detection Guide explains the 12 detection names covered in this documentation and the evidence each observation provides. Deploy the changes and review qualifying and normal examples under appropriate conditions. Verify the source, timestamp, notification, and footage before relying on the rule; detected activity still requires interpretation in its scene context.",
     "tags": [
       "Camera",
       "Alarm Settings",
@@ -4497,7 +4497,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "10.8",
     "readingTime": 4,
-    "summary": "Find alarms, prioritize investigations, and track the response in Notifications. Open event details to review footage, classify the event, add notes, and update its status.",
+    "summary": "Use Notifications as the working queue for locating alarms, deciding what to investigate, and following the saved response. The list brings event type, time, location, camera, severity, and status together so operators can find recent activity, outstanding work, or records from a known interval. Filter for the task, open the relevant details, and compare the associated footage and AI annotations before classifying the event. Auto Refresh supports ongoing monitoring, while pausing it can keep the list stable during review. Save the findings and status through the available actions, then verify the record. Reading a notification or stopping an alert does not complete the response, and active filters can hide a record after its status changes.",
     "tags": [
       "Notify",
       "Overview",
@@ -4556,7 +4556,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Find the event you need using keywords, combined filters, and pagination. Check its status, then open the details to review footage and response notes.",
+    "summary": "Use Notification Center to find the event record needed for monitoring, a response review, or a historical investigation. Start with a known camera, location, keyword, or time interval, then combine the available type and status filters to narrow the list. Check severity separately from response progress, browse additional pages, and open View to examine the associated footage, notes, and event details. Auto Refresh can keep recent activity visible during a shift; pause it when reviewing a stable set of records. If the expected event is absent, broaden one criterion at a time and check the time zone and camera access. After handling an event, verify its saved status and notes in the relevant record.",
     "tags": [
       "Notify",
       "Search and Filter",
@@ -4610,7 +4610,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Verify an event using its details, AI annotations, and associated footage. Save the classification, response status, and notes that reflect the investigation.",
+    "summary": "Use Notification Details to move from an item in the event list to a verified account of what happened and how it was handled. Select View and confirm the alarm ID, camera, time, location, detected type, and current status before inspecting the associated recording and AI annotations. Review the sequence around the trigger to establish context, then use the permitted classification, note, and outcome actions to record the findings. If the clip is still processing, revisit it when available rather than assuming the evidence is missing. Check the saved record and related notification state afterward. Include unresolved questions and follow-up needs so another operator can continue the work from the recorded facts.",
     "tags": [
       "Notify",
       "View Notifications",
@@ -4664,7 +4664,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-06",
     "version": "10.8",
     "readingTime": 4,
-    "summary": "Configure access, display preferences, storage, and retention, and inspect logs when issues occur. Establish the impact of a change before saving, then verify the affected users and workflows.",
+    "summary": "Use Settings to maintain the access and operating conditions required by the platform’s monitoring and investigation workflows. Authorized users manage accounts, role permissions, camera scope, storage, retention, and logs, while display and current-account settings support everyday use. Establish who and what a change will affect before saving it: a shared role can affect several users, and retention changes can alter the available recording or log history. Verify the outcome where it matters, such as the affected user’s access, a stored recording, or a relevant log entry. Available storage options and administrative controls depend on the deployment. Follow the project’s change process and preserve required records before reducing their retention.",
     "tags": [
       "Set Up",
       "Overview",
@@ -4718,7 +4718,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Set display preferences, current-account settings, storage limits, and video and log retention. Verify that changes preserve the recording coverage and operational history required by the project.",
+    "summary": "Use System Settings to align platform preferences, storage configuration, and retention with the way the site operates. Display options and current-account details support the person using the workstation; capacity limits, storage destinations, and video or log retention can affect broader recording and investigation workflows. Review project requirements, current values, and server resources before an administrative change. Where an external destination such as SFTP is supported, verify connectivity, the destination path, and write access. After saving, check the expected data and any related errors. A restored setting cannot recreate records already removed, so preserve footage or logs required for an open investigation before shortening retention or changing capacity.",
     "tags": [
       "Set Up",
       "System Settings",
@@ -4791,7 +4791,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Create individual user accounts, assign roles, and update access as responsibilities change. Verify both the access a user needs and any permissions the user should not have.",
+    "summary": "Use Account Settings to give each user an identifiable account and maintain access as responsibilities change. Administrators with account-management permission create users, maintain the supported email, credential, role, and account-state fields, and withdraw access when it is no longer required. Determine the person’s tasks and camera area before choosing a role, then inspect that role’s actual feature and resource permissions. After saving, have the user sign in and verify required access as well as intended restrictions. Keep account identity and shared-role configuration separate when changing one person’s scope. Use the provided reset or recovery process for passwords, and keep plaintext credentials out of screenshots, notes, and handover records.",
     "tags": [
       "Set Up",
       "Account Settings",
@@ -4857,7 +4857,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Define which features a role can use and which cameras those features apply to. Assign the role to users so access matches their responsibilities.",
+    "summary": "Use User Role Settings to define the tasks a group of users can perform and the cameras those tasks apply to. Feature permissions govern access to pages and actions; resource permissions govern the camera scope within those features. List the role’s operational responsibilities, enable the required controls and devices, then assign the role through Account Settings. Inspect the actual configuration rather than assuming that a name such as operator or administrator implies a fixed permission set. A change to a shared role can affect every assigned user, so identify that group before saving. Verify required access and intended restrictions afterward, including both the visible modules and the cameras available within them.",
     "tags": [
       "Set Up",
       "User Role Settings",
@@ -4931,7 +4931,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "10.8",
     "readingTime": 2,
-    "summary": "Investigate failures and review changes using system, device, recording, and user-activity logs. Filter by time, type, and keyword, then correlate records with the affected workflow.",
+    "summary": "Use System Logs to investigate a failure or review a change by tracing the recorded events around its occurrence. Begin with the affected camera, account, service, time, and visible symptom, then filter by the available type, outcome, and keyword fields. Connection, recording, system, and user-activity records can help explain the sequence, but event coverage and detail depend on the deployment. Correlate related entries and verify the finding in the camera, recording, storage, or account workflow involved. Export the relevant interval when further analysis is needed, retaining the error text and completed checks. Log access, sharing, and retention should follow project requirements because records may contain device and account details.",
     "tags": [
       "Set Up",
       "System Logs",
@@ -4990,7 +4990,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 2,
-    "summary": "Before operational use, verify account access, live video, recordings, detection, and notification handling. Record failed checks and assign follow-up before relying on the workflow.",
+    "summary": "Use Getting Started Checklist before relying on POLYTRON ONE for a shift, a new deployment, or a changed workflow. Work with an administrator or delivery specialist to select an authorized account, a known camera, a recorded interval, and a supported detection rule. Check sign-in and permissions, live video, recording playback, detection, and the resulting notification response as separate parts of one operational path. Coordinate any detection test under approved, controlled conditions. Record the camera, test time, result, and supporting information for each exception, and assign follow-up through the project’s process. Readiness depends on the required workflow working end to end, not only on successful sign-in or a playable live feed.",
     "tags": [
       "Getting Started",
       "Checklist",
@@ -5026,7 +5026,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 2,
-    "summary": "Validate browser playback, camera connectivity, clock synchronization, and storage against the deployment’s monitoring and retention requirements.",
+    "summary": "Use System Requirements and Compatibility to validate the environment in which the documented workflows will run. Check the workstation’s browser and media support, the connection between cameras and platform services, the deployed stream formats, clock and time-zone alignment, and storage for the intended recording load. Test with the camera count and layout operators actually need, including playback and file downloads. This page provides validation areas rather than a universal hardware or browser-version specification; use the project’s approved baseline where one exists. When a test fails, retain the browser, operating system, camera, protocol, codec, time, and error information needed to reproduce the issue without sharing credentials.",
     "tags": [
       "System Requirements",
       "Compatibility",
@@ -5072,7 +5072,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 2,
-    "summary": "Identify where the workflow fails, verify the relevant configuration, and retest. Use the checks below for access, live video, recordings, alarms, notifications, and exports.",
+    "summary": "Use Troubleshooting to identify the failing part of a workflow before changing its configuration. Establish whether the symptom affects one account, one camera, a particular recording interval, or the platform as a whole, and record the time and visible error. The checks below cover sign-in and permissions, live video, recording availability, detection, notifications, search, and export. Start with the settings closest to the failure, change one relevant condition at a time, and repeat the operation to verify recovery. Separate empty search results from missing recordings and a filtered notification from an absent event. If escalation is needed, provide the observed result, completed checks, and supporting records so another person can continue the investigation.",
     "tags": [
       "Troubleshooting",
       "Operations",
@@ -5123,7 +5123,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 2,
-    "summary": "Prioritize events according to personal safety, site risk, and how the event is developing. Follow the project’s escalation procedure and retain the findings and response record.",
+    "summary": "Use Alarm Severity and Response Guidelines to prioritize event review according to the risk to people, sensitive areas, and ongoing operations. Assess the detected behavior together with its location, duration, impact, and current development, then follow the project’s escalation procedure. Severity expresses the risk assessment; pending, confirmed, or closed states express response progress. Review both before deciding what to do next. Record the verified conditions, action taken, remaining uncertainty, and required follow-up using the available event fields and site process. The response order on this page supports operational judgment; it does not prescribe a universal response time or replace project-specific staffing, service agreements, or emergency procedures.",
     "tags": [
       "Alarm Severity",
       "Response",
@@ -5169,7 +5169,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 2,
-    "summary": "Preserve the recording needed for an investigation. Verify the source footage, trim the relevant interval, check the downloaded file, and register where it is stored.",
+    "summary": "Use Recording Export and Evidence Retention when a verified recording needs to be preserved for investigation, review, reporting, or support. Confirm access to the source camera and footage, watch the surrounding sequence, then choose start and end points that retain the relevant context without unnecessary video. Check browser download permission, free space, and destination before exporting. After the file is downloaded, open it and verify the camera image, timestamps, duration, and complete playback. Register the event reference, footage interval, exporter, and storage location through the project’s process. Supported formats and limits depend on the deployment; recipient access and any required processing or approval follow the project’s sharing rules.",
     "tags": [
       "Recording Export",
       "Evidence",
@@ -5215,7 +5215,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 2,
-    "summary": "Assign access by responsibility and protect shared workstations and exported data. Set retention according to project requirements and preserve records needed for investigations.",
+    "summary": "Use Security and Data Retention to align account access, workstation use, and retained data with the responsibilities of the people operating the system. Grant only the features and cameras required for each task, review shared and elevated access, and update permissions when staffing or duties change. Set recording, event, note, and log retention according to their respective investigation needs and the project’s capacity and policy. Preserve records needed by open investigations before reducing a retention period. Export and share only the required scope through approved methods, keeping the source and destination traceable. These operating principles do not establish built-in processing tools or universal security rules; the project’s applicable policies and requirements determine the configuration.",
     "tags": [
       "Security",
       "Data Retention",
@@ -5267,7 +5267,7 @@ export const initialDocs: DocPage[] = [
     "updatedAt": "2026-11-03",
     "version": "1.4",
     "readingTime": 2,
-    "summary": "Resolve common access, camera, recording, alarm, notification, and export issues. Use the answers below to identify the next check, then continue in the relevant module.",
+    "summary": "Use Frequently Asked Questions to choose the next practical check for common account, camera, recording, alarm, notification, and export issues. The answers explain recurring distinctions: access to a page does not necessarily include its cameras, an online device does not establish usable video or historical coverage, and a detection label or confidence score still needs footage review. Match the question to the observed symptom, then continue in the relevant feature guide or Troubleshooting for the full workflow. If the suggested checks do not resolve the issue, collect the page, time and time zone, camera, error, and completed steps for an administrator. Exclude passwords, active tokens, and complete stream credentials from the report.",
     "tags": [
       "FAQ",
       "Support",
