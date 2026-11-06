@@ -1,0 +1,14 @@
+node_modules/
+dist/
+chrome-*-profile/
+*-preview.png
+published/
+.tmp-ffmpeg/
+*.log
+*.tsbuildinfo
+*.mp4.download
+*.mp4.lfs
+*.zip
+.env
+.env.*
+!.env.example

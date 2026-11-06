@@ -1,0 +1,119 @@
+# Professional Terminology
+
+Headings, table labels, navigation labels, diagram nodes and action labels use Title Case. Short articles, conjunctions and prepositions within labels (and, of, to, with) remain lowercase. Use canonical product names and acronyms below, including in ordinary prose. Preserve sentence casing for explanatory prose; never change URLs, filenames, IDs, CSS classes, state codes or code examples.
+
+- 3D
+- AI
+- AI Analysis
+- AI Detection
+- API
+- Access Audit
+- Access Control
+- Account Settings
+- Alarm Center
+- Alarm Details
+- Alarm Handling
+- Alarm Overview
+- Alarm Rules
+- Auto Refresh
+- Bit Rate
+- Business Systems
+- CPU
+- Camera Information
+- Camera Management
+- Camera Permission
+- Camera Permissions
+- Camera Resource
+- Camera Resources
+- Camera Selection
+- Control Panel
+- Detection Algorithm
+- Detection Algorithms
+- Detection Area
+- Detection Region
+- Detection Rules
+- Detection Threshold
+- Detection Thresholds
+- Device Management
+- Dwell Time Detection
+- Event Evidence
+- Evidence Retention
+- Existing VMS
+- Face Recognition
+- False Alarm
+- False Alarms
+- Feature Permission
+- Feature Permissions
+- Frame Rate
+- GPU
+- H.264
+- H.265
+- HTTP
+- HTTPS
+- Heat Map
+- Heatmap
+- IP
+- Intelligent Search
+- Intrusion Detection
+- Line Crossing
+- Live View
+- Live Viewing
+- Loitering Detection
+- MP4
+- Main Stream
+- Multi-Camera Playback
+- NVR
+- Network Camera
+- Network Cameras
+- Notification Center
+- Notification Details
+- ONVIF
+- POLYTRON ONE
+- PTZ
+- PTZ Control
+- People Counting
+- Playback
+- RAM
+- RTSP
+- Real-Time Preview
+- Recording Duration
+- Recording Export
+- Recording Plan
+- Recording Schedule
+- Recording Settings
+- Recording Storage
+- Recording Task
+- Recording Tasks
+- Retention Period
+- Role Settings
+- Search Results
+- Security Operations
+- Storage Capacity
+- Storage Space
+- Substream
+- System Administrator
+- System Information
+- System Logs
+- System Settings
+- TCP
+- Tab Management
+- Time Sync
+- Time Synchronization
+- Time Zone
+- Timeline View
+- UDP
+- URL
+- User Role
+- User Role Settings
+- User Roles
+- VMS
+- Video Analysis
+- Video Analytics
+- Video Codec
+- Video Codecs
+- Video Sources
+- Video Stream
+- Video Streams
+- View Operations
+- WebRTC
+- Work Orders

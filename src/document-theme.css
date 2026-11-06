@@ -1,0 +1,179 @@
+/* Editorial documentation skin sampled from the Alinma reference. */
+.docs-shell, .preview-document {
+  --doc-paper: #fafafa;
+  --doc-ink: #171717;
+  --doc-body: #4d4d4d;
+  --doc-caption: #6b6b6b;
+  --doc-rule: #ebebeb;
+  font-family: Geist, "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+  color: var(--doc-body);
+  background: var(--doc-paper);
+  font-synthesis: none;
+}
+.docs-shell ::selection { background: #171717; color: #fff; }
+.docs-sidebar, .docs-language-select { background: #fafafa; border-color: #ebebeb; }
+.docs-sidebar-inner { width: 100%; }
+.docs-search, .docs-sidebar-collapsed-actions { box-shadow: none; border-color: #ebebeb; }
+.docs-nav { color: #4d4d4d; }
+.docs-nav-link.active { background: #f2f2f2; color: #171717; font-weight: 500; }
+.docs-brand strong, .docs-brand-subtitle { font-weight: 600; }
+.docs-shell .docs-article { max-width: 1140px; padding: 48px clamp(24px, 3vw, 56px) 96px; }
+.docs-breadcrumb { padding-bottom: 24px; margin-bottom: 56px; border-bottom: 1px solid #ebebeb; color: #6b6b6b; font-size: 12px; }
+.docs-shell .docs-article h1 { min-height: 0; margin-bottom: 28px; color: #171717; font: 600 48px/1.08 Geist, "Microsoft YaHei", "PingFang SC", sans-serif; letter-spacing: -.035em; text-wrap: balance; }
+.docs-content, .docs-summary { color: #4d4d4d; }
+.docs-summary { width: 100%; max-width: 940px; margin-bottom: 40px; line-height: 1.625; }
+.docs-content.rich-document > :is(p, h2, h3, ul, ol) { width: 100%; max-width: 940px; }
+.docs-shell .docs-content :is(p, li) { color: #4d4d4d; font-size: 16px; line-height: 1.625; }
+.docs-content p { margin-bottom: 20px; }
+.docs-shell .docs-content h2, .docs-shell .supplemental-heading h2 { color: #171717; font-size: 32px; line-height: 1.25; font-weight: 600; letter-spacing: -.03em; margin: 64px 0 24px; }
+.docs-shell .docs-content h3 { color: #171717; font-size: 20px; line-height: 1.4; font-weight: 600; margin: 36px 0 16px; }
+.docs-content strong, .docs-supplements strong { color: #171717; font-weight: 600; }
+.docs-content a, .docs-content a:visited { color: #0070f3; text-underline-offset: 4px; }
+.docs-toc { color: #6b6b6b; font-size: 12px; }
+.docs-supplements { gap: 64px; margin: 40px 0 64px; }
+.supplemental-section { min-width: 0; gap: 24px; padding-top: 40px; border-top: 1px solid #ebebeb; }
+.supplemental-heading { gap: 0; }
+.supplemental-heading > span { display: none; }
+.docs-shell .supplemental-heading h2 { margin: 0 0 20px; }
+.supplemental-heading p { max-width: 940px; font-size: 16px; line-height: 1.625; color: #4d4d4d; }
+.supplemental-caption { font-size: 12px; line-height: 1.65; color: #6b6b6b; }
+.docs-supplements :is(article, li, .landscape-column, .landscape-core) { box-shadow: none; }
+.landscape-diagram { background: #fff; border: 1px solid #ebebeb; border-radius: 8px; padding: 24px; gap: 16px; grid-template-columns: minmax(132px, 1fr) 20px minmax(256px, 1.8fr) 20px minmax(156px, 1.15fr); overflow-x: auto; }
+.landscape-column, .landscape-core { padding: 16px; border-radius: 6px; }
+.landscape-core { border: 1px solid #171717; background: #f7f7f7; box-shadow: none; }
+.landscape-column span, .landscape-capabilities span { background: transparent; border-radius: 0; padding: 6px 0; font-size: 12px; line-height: 1.5; }
+.landscape-capabilities { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px; }
+.landscape-kicker { font-weight: 500; letter-spacing: 0; color: #6b6b6b; }
+.supplemental-arrow { color: #737373; }
+.docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow) { gap: 0; padding: 0; border: 1px solid #ebebeb; border-radius: 8px; background: #fff; overflow-x: auto; }
+.docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow) > li { min-width: 0; margin: 0; padding: 24px 16px; border: 0; border-right: 1px solid #ebebeb; border-radius: 0; background: transparent; box-shadow: none; gap: 12px; }
+.docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow) > li:last-child { border-right: 0; }
+.docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow) strong { font-size: 14px; line-height: 1.5; }
+.docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow) small { font-size: 12px; line-height: 1.65; color: #6b6b6b; }
+.docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .evidence-workflow) .supplemental-arrow { display: none; }
+.workflow-number, .onboarding-index, .playback-workflow-diagram > li > span { font: 400 12px/1.5 "Geist Mono", monospace; color: #6b6b6b; letter-spacing: 0; }
+.docs-supplements :is(.role-paths article, .readiness-path li, .relationship-flow li, .retention-balance, .status-rule) { border-color: #ebebeb; border-radius: 8px; background: #fff; box-shadow: none; }
+.docs-shell .matrix-scroll { max-width: 100%; overflow-x: auto; border: 1px solid #ebebeb; border-radius: 8px; background: #fff; }
+.docs-shell .matrix-scroll table, .docs-content table { width: 100%; min-width: 640px; border-collapse: collapse; text-align: left; font: 400 14px/1.6 Geist, "Microsoft YaHei", sans-serif; font-variant-numeric: tabular-nums; color: #4d4d4d; }
+.docs-shell .matrix-scroll thead th, .docs-content thead th { padding: 14px 20px; background: #f7f7f7; color: #4d4d4d; border: 0; border-bottom: 1px solid #ebebeb; font-size: 12px; font-weight: 500; text-align: left; }
+.docs-shell .matrix-scroll :is(td, tbody th), .docs-content :is(td, tbody th) { padding: 20px; background: transparent; border: 0; border-bottom: 1px solid #ebebeb; color: #4d4d4d; font-size: 14px; font-weight: 400; vertical-align: top; text-align: left; }
+.docs-shell .matrix-scroll tbody th { color: #171717; font-weight: 500; }
+.docs-shell .matrix-scroll tbody tr:last-child > * { border-bottom: 0; }
+.docs-shell .matrix-scroll tbody tr:hover { background: #f7f7f7; }
+.docs-content figure { margin-block: 32px; }
+.docs-shell :is(code, pre, kbd) { font-family: "Geist Mono", monospace; }
+@media (min-width: 1280px) {
+ .docs-layout { grid-template-columns: 240px minmax(0, 1fr) 184px; column-gap: 24px; }
+ .docs-layout.sidebar-collapsed { grid-template-columns: 76px minmax(0, 1fr) 184px; }
+ .docs-sidebar { padding: 32px 20px; }
+}
+@media (max-width: 1279px) and (min-width: 761px) {
+ .docs-layout { grid-template-columns: 224px minmax(0, 1fr); column-gap: 0; }
+ .docs-layout.sidebar-collapsed { grid-template-columns: 76px minmax(0, 1fr); }
+ .docs-toc { display: none; }
+}
+@media (max-width: 760px) {
+ .docs-shell .docs-article { padding: 32px 24px 64px; }
+ .docs-shell .docs-article h1 { font-size: 36px; }
+ .docs-breadcrumb { margin-bottom: 32px; }
+ .docs-shell .docs-content h2, .docs-shell .supplemental-heading h2 { font-size: 26px; }
+ .docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow) { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 172px; }
+ .landscape-diagram { grid-template-columns: 144px 20px 272px 20px 176px; }
+ .landscape-diagram > .supplemental-arrow { display: block; transform: none; }
+ .docs-supplements { gap: 40px; }
+}
+@media print {
+ .docs-shell, .docs-article { background: #fff; }
+ .docs-shell .docs-article { max-width: none; padding: 0; }
+ .supplemental-section { break-inside: avoid; }
+ .matrix-scroll, .landscape-diagram { overflow: visible; }
+}
+
+.docs-brand strong { white-space: nowrap; font-size: 14px; }
+.docs-toc a { white-space: normal; overflow-wrap: anywhere; }
+
+/* Text and source media share one measure. Lists retain their semantic indent. */
+.docs-shell .docs-content.rich-document h2:has(+ img, + figure, + p > img) {
+  margin-bottom: 12px;
+}
+.docs-content.rich-document h2 + img,
+.docs-content.rich-document h2 + figure,
+.docs-content.rich-document h2 + p:has(> img) {
+  margin-top: 0;
+}
+.docs-content.rich-document h2 + figure > img,
+.docs-content.rich-document h2 + p > img {
+  margin-top: 0;
+}
+
+/* Shared reading sizes for every documentation diagram and guidance card. */
+.docs-shell .docs-article .docs-supplements :is(div, p, small, span, code, a, button, th, td, li) {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.docs-shell .docs-article .docs-supplements :is(strong, b) {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.docs-shell .docs-supplements .supplemental-heading p { font-size: 16px; }
+.docs-shell .docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow, .readiness-path, .security-layers) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: row;
+  grid-auto-columns: auto;
+}
+.docs-shell .docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow) > li {
+  padding: 24px;
+  border: 1px solid #ebebeb;
+  border-width: 0 1px 1px 0;
+}
+.docs-shell .docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow) > li:nth-child(3n) { border-right: 0; }
+.docs-shell .docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow) > li:nth-last-child(-n+3) { border-bottom: 0; }
+.docs-shell .docs-supplements :is(.relationship-flow, .tree-branches, .global-troubleshooting-map, .ui-state-guide, .rule-formula) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.docs-shell .docs-supplements :is(.readiness-path, .relationship-flow, .security-layers) > li {
+  padding: 20px;
+  gap: 12px;
+}
+.docs-shell .docs-supplements :is(.relationship-flow, .readiness-path) .supplemental-arrow,
+.docs-shell .docs-supplements .rule-formula > div > b { display: none; }
+.docs-shell .docs-supplements .faq-router { gap: 16px; }
+.docs-shell .docs-supplements .faq-router a { padding: 24px; gap: 12px; min-height: 190px; }
+.docs-shell .docs-supplements .faq-router b { font-size: 14px; font-weight: 500; }
+.docs-shell .docs-supplements .faq-router a:hover { box-shadow: none; }
+.docs-shell .docs-supplements .status-token { grid-template-columns: 12px minmax(88px, auto) 1fr; gap: 12px; }
+.docs-shell .docs-supplements .filename-anatomy { grid-template-columns: 1fr; }
+.docs-shell .docs-supplements .filename-anatomy small { grid-column: 1; overflow-wrap: anywhere; }
+.docs-shell .docs-supplements .landscape-column,
+.docs-shell .docs-supplements .landscape-core { padding: 20px; }
+.docs-shell .docs-supplements .landscape-diagram { grid-template-columns: minmax(180px, 1fr) 20px minmax(300px, 1.6fr) 20px minmax(200px, 1.1fr); }
+.docs-shell .docs-supplements .landscape-capabilities { gap: 12px 16px; }
+.docs-shell .docs-supplements :is(.metric-action-map, .role-paths, .area-guide, .status-legend-grid) > * { min-width: 0; }
+.docs-shell .docs-supplements :is(.security-note, .readiness-result) { flex-wrap: wrap; }
+.docs-shell .docs-supplements .rule-formula > div { padding: 20px; }
+@media (max-width: 1279px) {
+ .docs-shell .docs-supplements :is(.faq-router, .role-paths) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 1100px) {
+ .docs-shell .docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow, .readiness-path, .security-layers) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .docs-shell .docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow) > li { border-right: 1px solid #ebebeb; border-bottom: 1px solid #ebebeb; }
+ .docs-shell .docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow) > li:nth-child(2n) { border-right: 0; }
+ .docs-shell .docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow) > li:last-child { border-bottom: 0; }
+ .docs-shell .docs-supplements .status-legend-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+ .docs-shell .docs-supplements :is(.faq-router, .role-paths, .workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow, .readiness-path, .security-layers, .relationship-flow, .tree-branches, .global-troubleshooting-map, .ui-state-guide, .rule-formula, .metric-action-map, .area-guide) { grid-template-columns: 1fr; }
+ .docs-shell .docs-supplements :is(.workflow-diagram, .state-flow, .onboarding-flow, .playback-workflow-diagram, .evidence-workflow) > li { border-right: 0; border-bottom: 1px solid #ebebeb; }
+ .docs-shell .docs-supplements .faq-router a { min-height: 0; }
+ .docs-shell .docs-supplements .status-token { grid-template-columns: 12px 1fr; }
+ .docs-shell .docs-supplements .status-token small { grid-column: 2; }
+}
+
+
+
+/* Match the existing drawer breakpoint so tablet cards use the full page. */
+@media (max-width: 900.98px) {
+ .docs-layout, .docs-layout.sidebar-collapsed { grid-template-columns: minmax(0, 1fr); column-gap: 0; }
+ .docs-shell .docs-article { padding: 32px 24px 64px; }
+}

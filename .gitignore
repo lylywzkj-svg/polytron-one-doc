@@ -1,0 +1,17 @@
+node_modules/
+dist/
+published/
+.tmp-ffmpeg/
+.env
+.env.*
+*.log
+*.tsbuildinfo
+*.mp4.download
+*.mp4.lfs
+chrome-*-profile/
+*-preview.png
+*.zip
+
+.vercel
+.env*
+!.env.example
