@@ -5082,6 +5082,15 @@ function docContentWithAnchors(doc: DocPage, docs: DocPage[]) {
   const template = document.createElement("template");
   template.innerHTML = html;
   enhanceNodeNavigation(template, doc, docs);
+  const introAsset = doc.mediaAssets?.find((asset) => asset.id === `${doc.id}-intro`);
+  const introImage = introAsset
+    ? Array.from(template.content.querySelectorAll("img")).find(
+        (image) => comparableMediaUrl(image.getAttribute("src") ?? "") === comparableMediaUrl(introAsset.url)
+      )
+    : undefined;
+  const introBlock = introImage?.closest("figure") ?? introImage;
+  const introHtml = introBlock?.outerHTML ?? "";
+  introBlock?.remove();
   const tocItems: Array<{ id: string; heading: string }> = [];
 
   template.content.querySelectorAll("h2").forEach((heading, index) => {
@@ -5095,6 +5104,7 @@ function docContentWithAnchors(doc: DocPage, docs: DocPage[]) {
 
   return {
     html: template.innerHTML,
+    introHtml,
     tocItems,
   };
 }
@@ -6371,7 +6381,7 @@ function PublicDocsApp() {
     };
   }, [isVersionMenuOpen]);
 
-  const { html: anchoredContent, tocItems } = docContentWithAnchors(selectedDoc, publicDocs);
+  const { html: anchoredContent, introHtml, tocItems } = docContentWithAnchors(selectedDoc, publicDocs);
   const supplementalTocItems = getProfessionalWorkflowToc(selectedDoc.id) ?? supplementalTocByDocId[visualSourceDocId(selectedDoc.id)] ?? [];
   const docsContentRef = useRef<HTMLDivElement>(null);
 
@@ -6858,6 +6868,14 @@ function PublicDocsApp() {
           </div>
           <h1>{selectedDoc.title}</h1>
           <p className="docs-summary">{selectedDoc.summary}</p>
+          {introHtml && (
+            <div
+              className="docs-overview-illustration"
+              dangerouslySetInnerHTML={{ __html: introHtml }}
+              onClick={handleContentClick}
+              onErrorCapture={handleUploadedImageError}
+            />
+          )}
           <SupplementalVisuals doc={selectedDoc} />
           <div
             ref={docsContentRef}
@@ -6902,7 +6920,7 @@ function PreviewDialog({
   onClose: () => void;
 }) {
   const [lightboxImage, setLightboxImage] = useState<LightboxImage | null>(null);
-  const previewContent = useMemo(() => docContentWithAnchors(doc, docs).html, [doc, docs]);
+  const { html: previewContent, introHtml } = useMemo(() => docContentWithAnchors(doc, docs), [doc, docs]);
   const handleContentClick = (event: MouseEvent<HTMLDivElement>) => {
     const image = lightboxImageFromTarget(event.target);
     if (!image) return;
@@ -6942,6 +6960,14 @@ function PreviewDialog({
           </div>
           <h1>{doc.title}</h1>
           <p className="preview-page-summary">{doc.summary}</p>
+          {introHtml && (
+            <div
+              className="docs-overview-illustration"
+              dangerouslySetInnerHTML={{ __html: introHtml }}
+              onClick={handleContentClick}
+              onErrorCapture={handleUploadedImageError}
+            />
+          )}
           <SupplementalVisuals doc={doc} />
           <div
             className="preview-page-content rich-document"
