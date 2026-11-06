@@ -43,6 +43,10 @@ MP4 assets are tracked with Git LFS. Install Git LFS before cloning or contribut
 git lfs install
 ```
 
+In the Vercel project, enable **Settings → Git → Git Large File Storage (LFS)** before deploying. Redeploy after enabling it so the build receives the actual videos rather than small pointer files.
+
+Each public file must fit Vercel's 1 GiB static-file limit. Keep original masters outside `public/` and publish web-optimized copies. The build checks all public assets for unresolved LFS pointers and oversized files; run `npm run test:media` to verify these checks.
+
 ## Documentation versions
 
 The public site serves V1.5 in Chinese and English. The version selector is temporarily hidden, and links containing `/docs/v1` open the corresponding V1.5 page while preserving the selected language, query parameters, and section anchor. Unprefixed documentation links default to English.
