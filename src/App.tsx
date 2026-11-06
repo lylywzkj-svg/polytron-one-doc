@@ -154,6 +154,7 @@ type PublishScope = "current" | "all";
 type DocLocale = "zh" | "en";
 type PublicDocVersion = "v1" | "v2";
 
+const PUBLIC_VERSION_SWITCHING_ENABLED = false;
 const PUBLIC_V2_RETURN_ROUTE_KEY = "polytron-doc-public-v2-return-route-v1";
 const PUBLIC_V1_LANDING_ROUTE_KEY = "polytron-doc-public-v1-landing-route-v1";
 const publicDocVersions: Array<{ code: PublicDocVersion; label: string }> = [
@@ -1201,7 +1202,12 @@ function localeFromPath(pathname: string): DocLocale {
 
 function publicDocPath(pathname: string) {
   const path = normalizeRoute(pathname);
-  return /^\/(?:en|zh)\/docs(?:\/|$)/.test(path) ? path : routeForLocale(path, "en");
+  const localizedPath = /^\/(?:en|zh)\/docs(?:\/|$)/.test(path)
+    ? path
+    : routeForLocale(path, "en");
+  return PUBLIC_VERSION_SWITCHING_ENABLED
+    ? localizedPath
+    : routeForLocale(v2RouteBaseForV1(localizedPath), localeFromPath(localizedPath));
 }
 
 function docBaseId(doc: Pick<DocPage, "id">) {
@@ -6394,7 +6400,7 @@ function PublicDocsApp() {
   }, [anchoredContent]);
 
   const navigateToDoc = (route: string) => {
-    const normalizedRoute = normalizeRoute(route);
+    const normalizedRoute = publicDocPath(route);
     const routeChanged = normalizeRoute(window.location.pathname) !== normalizedRoute;
     if (routeChanged) {
       window.history.pushState(null, "", normalizedRoute);
@@ -6663,49 +6669,51 @@ function PublicDocsApp() {
                     >
                       <strong>POLYTRON ONE</strong>
                     </a>
-                    <div className="docs-version-select" ref={versionMenuRef}>
-                      <button
-                        aria-expanded={isVersionMenuOpen}
-                        aria-haspopup="listbox"
-                        aria-label={publicCopy.versionMenuLabel}
-                        className="docs-version-button"
-                        onClick={() => {
-                          setIsLanguageMenuOpen(false);
-                          setIsVersionMenuOpen((open) => !open);
-                        }}
-                        type="button"
-                      >
-                        <span>{currentVersionLabel}</span>
-                        <ChevronDown size={13} strokeWidth={1.8} />
-                      </button>
-                      {isVersionMenuOpen && (
-                        <div
+                    {PUBLIC_VERSION_SWITCHING_ENABLED && (
+                      <div className="docs-version-select" ref={versionMenuRef}>
+                        <button
+                          aria-expanded={isVersionMenuOpen}
+                          aria-haspopup="listbox"
                           aria-label={publicCopy.versionMenuLabel}
-                          className="docs-version-menu"
-                          role="listbox"
+                          className="docs-version-button"
+                          onClick={() => {
+                            setIsLanguageMenuOpen(false);
+                            setIsVersionMenuOpen((open) => !open);
+                          }}
+                          type="button"
                         >
-                          <span className="docs-version-menu-title">
-                            {publicCopy.versionMenuLabel}
-                          </span>
-                          {publicDocVersions.map((version) => (
-                            <a
-                              aria-selected={currentVersion === version.code}
-                              className={`docs-version-option ${
-                                currentVersion === version.code ? "active" : ""
-                              }`}
-                              href={routeForPublicVersion(version.code)}
-                              key={version.code}
-                              onClick={(event) =>
-                                handlePublicVersionClick(event, version.code)
-                              }
-                              role="option"
-                            >
-                              {version.label}
-                            </a>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+                          <span>{currentVersionLabel}</span>
+                          <ChevronDown size={13} strokeWidth={1.8} />
+                        </button>
+                        {isVersionMenuOpen && (
+                          <div
+                            aria-label={publicCopy.versionMenuLabel}
+                            className="docs-version-menu"
+                            role="listbox"
+                          >
+                            <span className="docs-version-menu-title">
+                              {publicCopy.versionMenuLabel}
+                            </span>
+                            {publicDocVersions.map((version) => (
+                              <a
+                                aria-selected={currentVersion === version.code}
+                                className={`docs-version-option ${
+                                  currentVersion === version.code ? "active" : ""
+                                }`}
+                                href={routeForPublicVersion(version.code)}
+                                key={version.code}
+                                onClick={(event) =>
+                                  handlePublicVersionClick(event, version.code)
+                                }
+                                role="option"
+                              >
+                                {version.label}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                   <a
                     className="docs-brand-subtitle"

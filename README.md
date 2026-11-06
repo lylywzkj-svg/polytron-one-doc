@@ -9,8 +9,9 @@ npm install
 npm run dev
 ```
 
-- Documentation: `http://127.0.0.1:5173/zh/docs`
+- Documentation (English by default): `http://127.0.0.1:5173/`
 - English documentation: `http://127.0.0.1:5173/en/docs`
+- Chinese documentation: `http://127.0.0.1:5173/zh/docs`
 - Editor: `http://127.0.0.1:5173/editor`
 
 ## Production build
@@ -44,6 +45,8 @@ git lfs install
 
 ## Documentation versions
 
-The site includes V1 and V1.5 in Chinese and English. Compatible modules share architecture and workflow diagrams. The separate batch-2 diagram review drafts are not integrated into this repository.
+The public site serves V1.5 in Chinese and English. The version selector is temporarily hidden, and links containing `/docs/v1` open the corresponding V1.5 page while preserving the selected language, query parameters, and section anchor. Unprefixed documentation links default to English.
+
+Future documentation updates apply to V1.5. Its source is `src/data.ts`; the internal version code `v2` still refers to V1.5 for compatibility. The historical V1 source in `src/legacyV1Data.ts` is preserved. The separate batch-2 diagram review drafts are not integrated into this repository.
 
 Before deploying, configure the actual production URL and server-side publishing credentials for this repository. Uploading the source does not deploy a website.
