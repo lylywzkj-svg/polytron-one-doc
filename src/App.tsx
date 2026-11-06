@@ -6185,7 +6185,7 @@ function PublicDocsApp() {
   const publicCopy =
     currentLocale === "en"
       ? {
-          brandSubtitle: "Product Documentation",
+          brandSubtitle: "Documentation",
           searchPlaceholder: "Search features",
           tocLabel: "On this page",
           sidebarToggleOpen: "Expand sidebar",
