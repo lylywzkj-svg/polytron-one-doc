@@ -3039,6 +3039,7 @@ progress::-webkit-progress-value {
 
 .docs-content.rich-document .docs-node-card > img,
 .preview-page-content.rich-document .docs-node-card > img {
+  cursor: pointer;
   width: 100%;
   max-width: none;
   height: 100%;
