@@ -1196,7 +1196,12 @@ function nearestLegacyV1Route(route: string) {
 }
 
 function localeFromPath(pathname: string): DocLocale {
-  return routeLocale(pathname);
+  return /^\/zh\/docs(?:\/|$)/.test(pathname) ? "zh" : "en";
+}
+
+function publicDocPath(pathname: string) {
+  const path = normalizeRoute(pathname);
+  return /^\/(?:en|zh)\/docs(?:\/|$)/.test(path) ? path : routeForLocale(path, "en");
 }
 
 function docBaseId(doc: Pick<DocPage, "id">) {
@@ -2670,10 +2675,8 @@ function readiness(doc: DocPage) {
 
 function App() {
   const path = window.location.pathname;
-  const host = window.location.hostname;
-  const isLocalRoot = (host === "127.0.0.1" || host === "localhost") && path === "/";
 
-  if (path.startsWith("/editor") || isLocalRoot) {
+  if (path.startsWith("/editor")) {
     return <EditorApp />;
   }
 
@@ -6126,7 +6129,7 @@ function SupplementalVisuals({ doc }: { doc: DocPage }) {
 }
 
 function PublicDocsApp() {
-  const [currentPath, setCurrentPath] = useState(() => window.location.pathname);
+  const [currentPath, setCurrentPath] = useState(() => publicDocPath(window.location.pathname));
   const currentLocale = localeFromPath(currentPath);
   const currentBaseRoute = routeBase(currentPath);
   const currentVersion: PublicDocVersion =
@@ -6203,12 +6206,20 @@ function PublicDocsApp() {
     })
     .filter((group) => group.docs.length || group.category.toLowerCase().includes(normalizedQuery));
   useEffect(() => {
-    document.title = `${selectedDoc.title} - POLYTRON ONE 文档`;
-  }, [selectedDoc.title]);
+    document.title = `${selectedDoc.title} - POLYTRON ONE ${currentLocale === "en" ? "Documentation" : "文档"}`;
+    document.documentElement.lang = currentLocale === "en" ? "en" : "zh-CN";
+  }, [selectedDoc.title, currentLocale]);
+
+  useEffect(() => {
+    const path = publicDocPath(window.location.pathname);
+    if (window.location.pathname !== path) {
+      window.history.replaceState(null, "", path + window.location.search + window.location.hash);
+    }
+  }, [currentPath]);
 
   useEffect(() => {
     const handlePopState = () => {
-      setCurrentPath(window.location.pathname);
+      setCurrentPath(publicDocPath(window.location.pathname));
       if (window.matchMedia("(max-width: 900.98px)").matches) {
         setIsMobileSidebarOpen(false);
       }
