@@ -75,6 +75,7 @@ import { categories, DocMediaAsset, DocPage, DocStatus, initialDocs } from "./da
 import type { DocSection } from "./data";
 import { legacyV1Docs } from "./legacyV1Data";
 import { ProfessionalWorkflowGuide, getProfessionalWorkflowToc } from "./ProfessionalWorkflowGuide";
+import { BackToTop } from "./BackToTop";
 import { visualSourceDocId, visualLinkForVersion } from "./sharedVersionVisuals";
 
 const STORAGE_KEY = "polytron-doc-admin-state-v7";
@@ -6199,6 +6200,7 @@ function PublicDocsApp() {
           sidebarToggleOpen: "Expand sidebar",
           sidebarToggleClose: "Collapse sidebar",
           sidebarSearch: "Open search",
+          backToTopLabel: "Back to top",
           versionMenuLabel: "Documentation version",
         }
       : {
@@ -6208,6 +6210,7 @@ function PublicDocsApp() {
           sidebarToggleOpen: "展开左侧菜单",
           sidebarToggleClose: "收起左侧菜单",
           sidebarSearch: "打开搜索",
+          backToTopLabel: "回到顶部",
           versionMenuLabel: "文档版本",
         };
   const activeLocale = docLocales.find((locale) => locale.code === currentLocale) ?? docLocales[0];
@@ -6926,6 +6929,10 @@ function PublicDocsApp() {
           ))}
         </aside>
       </main>
+      <BackToTop
+        label={publicCopy.backToTopLabel}
+        hidden={Boolean(lightboxImage) || (isMobileViewport && isMobileSidebarOpen)}
+      />
       {lightboxImage && (
         <ImageLightbox image={lightboxImage} onClose={() => setLightboxImage(null)} />
       )}
