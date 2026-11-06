@@ -1,11 +1,16 @@
 import { professionalWorkflowGuides } from "./professionalWorkflowData";
 import { priorityWorkflowGuides } from "./priorityWorkflowData";
+import { operationalWorkflowGuides } from "./operationalWorkflowData";
 import { visualSourceDocId } from "./sharedVersionVisuals";
 import { WorkflowDiagramPreview } from "./WorkflowDiagramPreview";
 import "./professional-workflow.css";
 
 function workflowGuideForDoc(docId: string) {
-  return priorityWorkflowGuides[docId] ?? professionalWorkflowGuides[visualSourceDocId(docId)];
+  return (
+    operationalWorkflowGuides[docId] ??
+    priorityWorkflowGuides[docId] ??
+    professionalWorkflowGuides[visualSourceDocId(docId)]
+  );
 }
 
 export function getProfessionalWorkflowToc(docId: string) {

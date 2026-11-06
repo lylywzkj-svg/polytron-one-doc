@@ -1,0 +1,100 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Account Creation, Changes, and Access Withdrawal — POLYTRON ONE</title><style>.professional-workflow { min-width: 0; max-width: 940px; margin: 40px 0 56px; color: #4d4d4d; }
+.professional-workflow .professional-workflow-heading { margin: 0 0 24px; }
+.professional-workflow .professional-workflow-heading h2 { margin: 0 0 20px; color: #171717; font-size: 32px; line-height: 1.3; font-weight: 600; letter-spacing: -.02em; scroll-margin-top: 32px; }
+.professional-workflow .professional-workflow-heading p { margin: 0; font-size: 16px; line-height: 1.75; }
+.professional-workflow .professional-workflow-figure { margin: 0 0 36px; }
+.professional-workflow-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 12px; margin-bottom: 12px; font-size: 14px; color: #6b6b6b; }
+.professional-workflow-tools button { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; color: #171717; background: #fff; font: inherit; font-weight: 500; cursor: pointer; }
+.professional-workflow-tools button:hover { border-color: #8c8c8c; }
+.professional-workflow-canvas { width: 100%; max-width: 100%; overflow: visible; border: 1px solid #ddd; border-radius: 6px; background: #fafafa; }
+.professional-workflow-canvas svg { display: block; width: 100%; max-width: 100%; min-width: 0; height: auto; font-family: Arial, "Microsoft YaHei", "PingFang SC", sans-serif; }
+.professional-workflow-canvas .stage { font-size: 20px; font-weight: 600; fill: #191919; }
+.professional-workflow-canvas .stage-index { font: 14px Consolas, monospace; fill: #555; }
+.professional-workflow-canvas .tag { font-size: 14px; fill: #5f5f5f; }
+.professional-workflow-canvas .node-title { font-size: 20px; font-weight: 600; fill: #191919; }
+.professional-workflow-canvas .node-body { font-size: 18px; fill: #404040; }
+.professional-workflow-canvas .core .tag { fill: #ddd; }
+.professional-workflow-canvas .core .node-title, .professional-workflow-canvas .core .node-body { fill: #fff; }
+.professional-workflow-canvas .legend { font-size: 14px; fill: #404040; }
+.professional-workflow-canvas .edge-label { font: 14px Arial, "Microsoft YaHei", sans-serif; fill: #404040; }
+.professional-workflow figcaption { display: block; margin: 16px 0 0; color: #4d4d4d; font-size: 14px; line-height: 1.75; }
+.professional-workflow-notes { display: grid; gap: 28px; }
+.professional-workflow-notes > section { padding-top: 24px; border-top: 1px solid #ebebeb; }
+.professional-workflow-notes h3 { margin: 0 0 14px; font-size: 20px; font-weight: 600; line-height: 1.5; color: #171717; scroll-margin-top: 32px; }
+.professional-workflow-notes p { margin: 0 0 12px; font-size: 16px; line-height: 1.8; }
+.professional-workflow-notes p:last-child { margin-bottom: 0; }
+.professional-workflow-tools button:focus-visible { outline: 2px solid #0070f3; outline-offset: 4px; }
+@media (max-width: 760px) { .professional-workflow .professional-workflow-heading h2 { font-size: 26px; } }
+@media print { .professional-workflow-tools { display: none; } .professional-workflow-canvas { overflow: visible; border: 0; } .professional-workflow-canvas svg { min-width: 0; width: 100%; } .professional-workflow-figure { break-inside: avoid; } }
+
+/* The V1.5 guides retain the approved type ramp and adapt to article width. */
+.priority-workflow-canvas { container-type: inline-size; }
+.priority-workflow-canvas .node .box { fill: #fff; stroke: #8c8c8c; stroke-width: 1.2; }
+.priority-workflow-canvas .node.context .box { fill: #f1f1f1; }
+.priority-workflow-canvas .node.core .box { fill: #191919; stroke: #191919; }
+.priority-workflow-canvas .node .tag { font-size: 17px; fill: #5f5f5f; }
+.priority-workflow-canvas .node .name { font-size: 26px; font-weight: 600; fill: #191919; }
+.priority-workflow-canvas .node .body { font-size: 23px; fill: #404040; }
+.priority-workflow-canvas .node.core .tag { fill: #dedede; }
+.priority-workflow-canvas .node.core .name, .priority-workflow-canvas .node.core .body { fill: #fff; }
+.priority-workflow-canvas .stage-label { font-size: 24px; font-weight: 600; fill: #191919; }
+.priority-workflow-canvas .stage-number { font: 15px Consolas, monospace; fill: #5f5f5f; }
+.priority-workflow-canvas .connector { stroke: #777; stroke-width: 1.5; fill: none; }
+.priority-workflow-canvas .legend { font-size: 17px; fill: #404040; }
+.priority-workflow-canvas .diagram-mobile { display: none; padding: 24px; }
+.priority-workflow-canvas .mobile-stage + .mobile-stage { margin-top: 30px; padding-top: 24px; border-top: 1px solid #d8d8d8; }
+.priority-workflow-canvas .mobile-stage > h3 { margin: 0 0 20px; font-size: 20px; line-height: 1.4; color: #191919; }
+.priority-workflow-canvas .step-index { margin-right: 12px; font: 13px Consolas, monospace; color: #5f5f5f; }
+.priority-workflow-canvas .mobile-node { padding: 20px; border: 1px solid #8c8c8c; border-radius: 6px; background: #fff; }
+.priority-workflow-canvas .mobile-node + .mobile-node { margin-top: 24px; }
+.priority-workflow-canvas .mobile-node.context { background: #f1f1f1; border-style: dashed; }
+.priority-workflow-canvas .mobile-node.core { background: #191919; border-color: #191919; color: #fff; }
+.priority-workflow-canvas .mobile-node .tag { margin: 0 0 10px; font-size: 12px; line-height: 1.5; color: #5f5f5f; }
+.priority-workflow-canvas .mobile-node.core .tag { color: #dedede; }
+.priority-workflow-canvas .mobile-node h4 { margin: 0 0 12px; font-size: 19px; line-height: 1.4; color: inherit; }
+.priority-workflow-canvas .mobile-node p:not(.tag) { margin: 0; font-size: 16px; line-height: 1.65; color: inherit; }
+.priority-workflow-canvas .mobile-node p + p { margin-top: 4px; }
+.priority-workflow-canvas .support-note { margin: 12px 0 0; font-size: 14px; line-height: 1.6; color: #5f5f5f; }
+@container (max-width: 879px) {
+ .priority-workflow-canvas .diagram-wide { display: none; }
+ .priority-workflow-canvas .diagram-mobile { display: block; }
+}
+@media print {
+ .priority-workflow-canvas .diagram-wide { display: block; }
+ .priority-workflow-canvas .diagram-mobile { display: none; }
+}
+
+.professional-workflow-dialog {
+  width: min(1440px, calc(100vw - 48px));
+  max-width: none;
+  height: min(1100px, calc(100dvh - 48px));
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #d8d8d8;
+  border-radius: 8px;
+  background: #fafafa;
+  overflow: hidden;
+}
+.professional-workflow-dialog[open] { display: flex; flex-direction: column; }
+.professional-workflow-dialog::backdrop { background: rgba(0, 0, 0, .55); }
+.workflow-dialog-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 16px 24px; border-bottom: 1px solid #ddd; }
+.workflow-dialog-header h2 { margin: 0; font-size: 22px; line-height: 1.4; font-weight: 600; color: #171717; }
+.workflow-dialog-header button { display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border: 1px solid #ddd; border-radius: 6px; background: #fff; color: #4d4d4d; cursor: pointer; }
+.workflow-dialog-header button:hover { border-color: #8c8c8c; color: #171717; }
+.workflow-dialog-header button:focus-visible, .workflow-dialog-body:focus-visible { outline: 2px solid #0070f3; outline-offset: -4px; }
+.workflow-dialog-body { flex: 1; min-height: 0; padding: 16px 24px; overflow: auto; overscroll-behavior: contain; }
+.workflow-dialog-body .professional-workflow-canvas { height: 100%; border: 0; border-radius: 0; }
+.workflow-dialog-body .professional-workflow-canvas > svg { height: 100%; width: 100%; }
+.workflow-dialog-note { flex-shrink: 0; margin: 0; padding: 12px 24px 16px; border-top: 1px solid #ddd; font-size: 14px; line-height: 1.6; }
+@media (max-width: 760px) {
+ .professional-workflow-dialog { width: calc(100vw - 24px); height: calc(100dvh - 24px); }
+ .workflow-dialog-header { padding: 12px 16px; gap: 12px; }
+ .workflow-dialog-header h2 { font-size: 18px; }
+ .workflow-dialog-body { padding: 16px; }
+ .workflow-dialog-body .diagram-mobile { padding: 0; }
+ .workflow-dialog-note { padding: 12px 16px; font-size: 13px; }
+}
+@media print { .professional-workflow-dialog[open] { display: none; } }
+
+body{margin:0;background:#fafafa;font-family:Arial,"Microsoft YaHei",sans-serif}.professional-workflow{width:calc(100% - 48px);max-width:1280px;margin:32px auto}.professional-workflow-figure{margin:0}@media(max-width:760px){.professional-workflow{width:calc(100% - 32px);margin:24px auto}}</style></head><body><main class="professional-workflow"><header class="professional-workflow-heading"><h1 style="font-size:32px;color:#191919;line-height:1.3;margin:0 0 20px">Account Creation, Changes, and Access Withdrawal</h1><p>Connect an individual account to the required role, verify its access, and maintain that access as the person’s responsibilities change.</p></header><figure class="professional-workflow-figure"><div class="professional-workflow-canvas priority-workflow-canvas"><svg class="diagram-wide" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1120" role="img" aria-labelledby="account-access-lifecycle-en-title account-access-lifecycle-en-desc"><title id="account-access-lifecycle-en-title">Account Creation, Changes, and Access Withdrawal</title><desc id="account-access-lifecycle-en-desc">Connect an individual account to the required role, verify its access, and maintain that access as the person’s responsibilities change.</desc><defs><marker id="account-access-lifecycle-en-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0L8 3L0 6Z" fill="#777"></path></marker></defs><rect width="1280" height="1120" fill="#fafafa"></rect><text class="stage-number" x="40" y="46">01</text><text class="stage-label" x="76" y="46"><tspan x="76">Prepare the Account</tspan></text><line x1="40" x2="360" y1="88" y2="88" stroke="#d8d8d8"></line><text class="stage-number" x="480" y="46">02</text><text class="stage-label" x="516" y="46"><tspan x="516">Save the User</tspan><tspan x="516" dy="28">Assignment</tspan></text><line x1="480" x2="800" y1="88" y2="88" stroke="#d8d8d8"></line><text class="stage-number" x="920" y="46">03</text><text class="stage-label" x="956" y="46"><tspan x="956">Verify &amp; Maintain</tspan><tspan x="956" dy="28">Access</tspan></text><line x1="920" x2="1240" y1="88" y2="88" stroke="#d8d8d8"></line><path class="connector" data-from="0" data-to="1" data-points="[[200,376],[200,436]]" d="M200 376 L200 436" marker-end="url(#account-access-lifecycle-en-arrow)"></path><path class="connector" data-from="1" data-to="3" data-points="[[360,568],[480,568]]" d="M360 568 L480 568" marker-end="url(#account-access-lifecycle-en-arrow)"></path><path class="connector" data-from="2" data-to="3" data-points="[[360,892],[432,892],[432,644],[480,644]]" d="M360 892 L424 892 Q432 892 432 884 L432 652 Q432 644 440 644 L480 644" stroke-dasharray="5 4" marker-end="url(#account-access-lifecycle-en-arrow)"></path><path class="connector" data-from="3" data-to="4" data-points="[[800,568],[840,568],[840,244],[920,244]]" d="M800 568 L832 568 Q840 568 840 560 L840 252 Q840 244 848 244 L920 244" marker-end="url(#account-access-lifecycle-en-arrow)"></path><path class="connector" data-from="4" data-to="5" data-points="[[1080,376],[1080,436]]" d="M1080 376 L1080 436" marker-end="url(#account-access-lifecycle-en-arrow)"></path><path class="connector" data-from="5" data-to="6" data-points="[[1080,700],[1080,760]]" d="M1080 700 L1080 760" marker-end="url(#account-access-lifecycle-en-arrow)"></path><g class="branch-label"><rect x="1105.5" y="393" width="133" height="24" fill="#fafafa"></rect><text x="1172" y="410" text-anchor="middle" style="font:17px Arial,Microsoft YaHei,sans-serif;fill:#404040">DUTIES CHANGE</text></g><g class="branch-label"><rect x="1114.5" y="717" width="115" height="24" fill="#fafafa"></rect><text x="1172" y="734" text-anchor="middle" style="font:17px Arial,Microsoft YaHei,sans-serif;fill:#404040">ACCESS ENDS</text></g><g class="node action" data-node="0" data-box="40,112,320,264"><rect class="box" x="40" y="112" width="320" height="264" rx="6"></rect><text class="tag" x="60" y="142"><tspan x="60">Administrator / Job Requirements</tspan></text><text class="name" x="60" y="182"><tspan x="60">Define the Required</tspan><tspan x="60" dy="32">Access</tspan></text><text class="body" x="60" y="250"><tspan x="60">Identify the person and</tspan><tspan x="60" dy="30">duties</tspan><tspan x="60" dy="30">Confirm the relevant</tspan><tspan x="60" dy="30">camera area</tspan></text></g><g class="node action" data-node="1" data-box="40,436,320,264"><rect class="box" x="40" y="436" width="320" height="264" rx="6"></rect><text class="tag" x="60" y="466"><tspan x="60">Administrator / Account Details</tspan></text><text class="name" x="60" y="506"><tspan x="60">Set the Email &amp; Role</tspan></text><text class="body" x="60" y="542"><tspan x="60">Use supported account</tspan><tspan x="60" dy="30">fields</tspan><tspan x="60" dy="30">Check the role’s actual</tspan><tspan x="60" dy="30">permissions</tspan></text></g><g class="node context" data-node="2" data-box="40,760,320,264"><rect class="box" x="40" y="760" width="320" height="264" rx="6"></rect><text class="tag" x="60" y="790"><tspan x="60">Shared Role / Change Context</tspan></text><text class="name" x="60" y="830"><tspan x="60">Check Other</tspan><tspan x="60" dy="32">Assigned Users</tspan></text><text class="body" x="60" y="898"><tspan x="60">A role change can affect</tspan><tspan x="60" dy="30">others</tspan><tspan x="60" dy="30">Review the scope before</tspan><tspan x="60" dy="30">saving</tspan></text></g><g class="node core" data-node="3" data-box="480,436,320,264"><rect class="box" x="480" y="436" width="320" height="264" rx="6"></rect><text class="tag" x="500" y="466"><tspan x="500">Core Record / Administrator</tspan></text><text class="name" x="500" y="506"><tspan x="500">Saved User Account</tspan></text><text class="body" x="500" y="542"><tspan x="500">Individual identity and</tspan><tspan x="500" dy="30">assigned role</tspan><tspan x="500" dy="30">Deliver credentials</tspan><tspan x="500" dy="30">appropriately</tspan></text></g><g class="node action" data-node="4" data-box="920,112,320,264"><rect class="box" x="920" y="112" width="320" height="264" rx="6"></rect><text class="tag" x="940" y="142"><tspan x="940">User / Access Verification</tspan></text><text class="name" x="940" y="182"><tspan x="940">Test Required Access</tspan></text><text class="body" x="940" y="218"><tspan x="940">Sign in and check pages</tspan><tspan x="940" dy="30">and cameras</tspan><tspan x="940" dy="30">Verify permitted and</tspan><tspan x="940" dy="30">restricted actions</tspan></text></g><g class="node action" data-node="5" data-box="920,436,320,264"><rect class="box" x="920" y="436" width="320" height="264" rx="6"></rect><text class="tag" x="940" y="466"><tspan x="940">When Responsibilities Change</tspan></text><text class="name" x="940" y="506"><tspan x="940">Update the</tspan><tspan x="940" dy="32">Assignment</tspan></text><text class="body" x="940" y="574"><tspan x="940">Review role and camera</tspan><tspan x="940" dy="30">scope</tspan><tspan x="940" dy="30">Save and verify the</tspan><tspan x="940" dy="30">changed access</tspan></text></g><g class="node action" data-node="6" data-box="920,760,320,264"><rect class="box" x="920" y="760" width="320" height="264" rx="6"></rect><text class="tag" x="940" y="790"><tspan x="940">When Access Is No Longer Needed</tspan></text><text class="name" x="940" y="830"><tspan x="940">Withdraw Unneeded</tspan><tspan x="940" dy="32">Access</tspan></text><text class="body" x="940" y="898"><tspan x="940">Use the supported</tspan><tspan x="940" dy="30">account action</tspan><tspan x="940" dy="30">Review history retention</tspan><tspan x="940" dy="30">separately</tspan></text></g><line x1="40" y1="1064" x2="1240" y2="1064" stroke="#d8d8d8"></line><g class="legend"><rect x="40" y="1080" width="14" height="14" fill="#f1f1f1" stroke="#8c8c8c"></rect><text x="66" y="1092">Context / Preconditions</text><rect x="320" y="1080" width="14" height="14" fill="#191919"></rect><text x="346" y="1092">Core Record</text><rect x="512" y="1080" width="14" height="14" fill="#fff" stroke="#8c8c8c"></rect><text x="538" y="1092">Action / Verification</text><path d="M770 1087H818" stroke="#777" marker-end="url(#account-access-lifecycle-en-arrow)"></path><text x="832" y="1092">Flow / Relationship</text><path d="M1056 1087H1104" stroke="#777" stroke-dasharray="5 4" marker-end="url(#account-access-lifecycle-en-arrow)"></path><text x="1118" y="1092">Supporting Context</text></g></svg><div class="diagram-mobile"><section class="mobile-stage"><h3><span class="step-index">01</span>Prepare the Account</h3><div class="mobile-node action"><p class="tag">Administrator / Job Requirements</p><h4>Define the Required Access</h4><p>Identify the person and duties</p><p>Confirm the relevant camera area</p></div><div class="mobile-node action"><p class="tag">Administrator / Account Details</p><h4>Set the Email &amp; Role</h4><p>Use supported account fields</p><p>Check the role’s actual permissions</p></div><div class="mobile-node context"><p class="tag">Shared Role / Change Context</p><h4>Check Other Assigned Users</h4><p>A role change can affect others</p><p>Review the scope before saving</p></div></section><section class="mobile-stage"><h3><span class="step-index">02</span>Save the User Assignment</h3><div class="mobile-node core"><p class="tag">Core Record / Administrator</p><h4>Saved User Account</h4><p>Individual identity and assigned role</p><p>Deliver credentials appropriately</p></div></section><section class="mobile-stage"><h3><span class="step-index">03</span>Verify &amp; Maintain Access</h3><div class="mobile-node action"><p class="tag">User / Access Verification</p><h4>Test Required Access</h4><p>Sign in and check pages and cameras</p><p>Verify permitted and restricted actions</p></div><div class="mobile-node action"><p class="tag">When Responsibilities Change</p><h4>Update the Assignment</h4><p>Review role and camera scope</p><p>Save and verify the changed access</p></div><div class="mobile-node action"><p class="tag">When Access Is No Longer Needed</p><h4>Withdraw Unneeded Access</h4><p>Use the supported account action</p><p>Review history retention separately</p></div><p class="support-note">Account updates follow changes in responsibilities. Withdraw access when the task or relationship ends using the actions available in the interface.</p></section></div></div><figcaption>An account identifies the user; the assigned role defines feature and camera access. Review shared-role impact separately and use the account actions supported by the deployment.</figcaption></figure></main></body></html>
