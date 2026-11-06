@@ -6186,7 +6186,7 @@ function PublicDocsApp() {
     currentLocale === "en"
       ? {
           brandSubtitle: "Documentation",
-          searchPlaceholder: "Search features",
+          searchPlaceholder: "Search",
           tocLabel: "On this page",
           sidebarToggleOpen: "Expand sidebar",
           sidebarToggleClose: "Collapse sidebar",
