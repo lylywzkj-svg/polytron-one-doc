@@ -25,6 +25,23 @@
 .docs-overview-illustration { width: 100%; max-width: 940px; margin: 0 0 40px; background: var(--doc-paper); isolation: isolate; }
 .docs-overview-illustration figure { margin: 0; }
 .docs-overview-illustration img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 8px; cursor: zoom-in; mix-blend-mode: multiply; }
+/* Detection sequences keep labels at reading size while the scenes scale. */
+.detection-storyboard { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; max-width: 940px; margin: 24px 0 28px; padding: 20px 0; border-block: 1px solid var(--doc-rule); }
+.detection-frame { min-width: 0; }
+.docs-shell .docs-content .detection-frame p { margin: 0; font-size: 15px; line-height: 1.55; }
+.docs-shell .docs-content .detection-frame .detection-phase { margin-bottom: 10px; color: var(--doc-caption); font-size: 12px; letter-spacing: .04em; }
+.docs-shell .docs-content .detection-frame .detection-frame-title { margin: 14px 0 6px; color: var(--doc-ink); font-size: 16px; font-weight: 600; }
+.docs-content .detection-frame img { display: block; width: 100%; height: auto; margin: 0; border-radius: 6px; background: var(--doc-paper); }
+.docs-content .detection-index { width: 100%; max-width: 940px; table-layout: fixed; }
+.docs-content .detection-index th:first-child { width: 36%; }
+.docs-content :is(.detection-index th, .detection-index td) { overflow-wrap: anywhere; }
+.docs-content h3[id^="detection-"] { scroll-margin-top: 32px; }
+@media (max-width: 760px) {
+ .detection-storyboard { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+ .detection-frame img { max-width: 440px; margin-inline: auto; }
+ .docs-content .detection-index { min-width: 0; }
+ .docs-shell .docs-content .detection-index :is(th, td) { padding: 12px 10px; font-size: 14px; }
+}
 .docs-content.rich-document > :is(p, h2, h3, ul, ol) { width: 100%; max-width: 940px; }
 .docs-shell .docs-content :is(p, li) { color: #4d4d4d; font-size: 16px; line-height: 1.625; }
 .docs-content p { margin-bottom: 20px; }

@@ -1,0 +1,74 @@
+{
+  "reference": "https://www.docs.moi/va.html",
+  "updated": "2026-11-06",
+  "style": {
+    "source": "Existing POLYTRON ONE documentation theme; previously approved editorial design",
+    "paper": "#fafafa",
+    "ink": "#171717",
+    "muted": "#6b6b6b",
+    "accent": "#4f5bd5"
+  },
+  "note": "Original vector illustrations explain observations; they do not reproduce product UI or promise configuration fields. Static sequences keep all steps visible. Motion Detection uses existing product documentation.",
+  "detections": [
+    {
+      "name": "Geo Fencing",
+      "reference": "https://www.docs.moi/va.html#explain-a002",
+      "sourceLabel": "A002"
+    },
+    {
+      "name": "People Counting",
+      "reference": "https://www.docs.moi/va.html#explain-a006",
+      "sourceLabel": "A006"
+    },
+    {
+      "name": "No-Mask Detection",
+      "reference": "https://www.docs.moi/va.html#explain-a039",
+      "sourceLabel": "A039"
+    },
+    {
+      "name": "Smoking Detection",
+      "reference": "https://www.docs.moi/va.html#explain-a051",
+      "sourceLabel": "A051"
+    },
+    {
+      "name": "Motion Detection",
+      "reference": null,
+      "sourceLabel": "Existing Motion Detection documentation"
+    },
+    {
+      "name": "Line Crossing",
+      "reference": "https://www.docs.moi/va.html#explain-a003",
+      "sourceLabel": "A003"
+    },
+    {
+      "name": "Facial Detection",
+      "reference": "https://www.docs.moi/va.html#explain-a001",
+      "sourceLabel": "A001"
+    },
+    {
+      "name": "IDLE Time",
+      "reference": "https://www.docs.moi/va.html#explain-a056",
+      "sourceLabel": "A056"
+    },
+    {
+      "name": "Fire Detection",
+      "reference": "https://www.docs.moi/va.html#explain-a010",
+      "sourceLabel": "A010"
+    },
+    {
+      "name": "Crowd Detection",
+      "reference": "https://www.docs.moi/va.html#explain-a007",
+      "sourceLabel": "A007"
+    },
+    {
+      "name": "Fall Detection",
+      "reference": "https://www.docs.moi/va.html#explain-a054",
+      "sourceLabel": "A054"
+    },
+    {
+      "name": "Sleeping Detection",
+      "reference": "https://www.docs.moi/va.html#explain-a049",
+      "sourceLabel": "A049"
+    }
+  ]
+}

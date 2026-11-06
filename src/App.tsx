@@ -1358,6 +1358,7 @@ function docsSourceSignature(docs: DocPage[]) {
         id: doc.id,
         route: doc.route,
         title: doc.title,
+        navTitle: doc.navTitle,
         category: doc.category,
         status: doc.status,
         updatedAt: doc.updatedAt,
@@ -6211,7 +6212,7 @@ function PublicDocsApp() {
     .map((group) => {
       const docs = normalizedQuery
         ? group.docs.filter((doc) =>
-            [group.category, doc.title, doc.summary, doc.route]
+            [group.category, doc.title, doc.navTitle, doc.summary, doc.route]
               .join(" ")
               .toLowerCase()
               .includes(normalizedQuery)
@@ -6800,9 +6801,10 @@ function PublicDocsApp() {
                               }`}
                               href={doc.route}
                               key={doc.id}
+                              title={doc.title}
                               onClick={(event) => handleDocLinkClick(event, doc.route)}
                             >
-                              {doc.title}
+                              {doc.navTitle ?? doc.title}
                             </a>
                           ))}
                         </div>
