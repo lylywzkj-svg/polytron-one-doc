@@ -4300,16 +4300,24 @@ progress::-webkit-progress-value {
 
 .alarm-video-panel {
   position: relative;
+  isolation: isolate;
   display: grid;
   align-content: end;
   gap: 9px;
   padding: 18px;
   overflow: hidden;
   background-color: #0f172a;
+  color: #fff;
+}
+
+/* Crop the thin black edge embedded in the source frame. */
+.alarm-video-frame {
+  position: absolute;
+  z-index: -1;
+  inset: -2px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #fff;
 }
 
 .alarm-video-panel > span {

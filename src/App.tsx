@@ -4824,7 +4824,12 @@ function compactNodeCardDescription(value: string, fallback: string, locale: Doc
   const normalized = (value || fallback).replace(/^[：:·\-—\s]+/, "").replace(/\s+/g, " ").trim();
   const limit = locale === "en" ? 112 : 76;
   if (normalized.length <= limit) return normalized;
-  return `${normalized.slice(0, limit - 1).replace(/[，、；：,;:\s]+$/, "")}…`;
+  let shortened = normalized.slice(0, limit - 1);
+  if (locale === "en") {
+    const boundary = normalized.lastIndexOf(" ", limit - 1);
+    shortened = boundary > 0 ? normalized.slice(0, boundary) : normalized.split(" ")[0];
+  }
+  return `${shortened.replace(/[，、；：。！？,;:.!?\s]+$/, "")}…`;
 }
 
 function firstExistingDocImage(doc: DocPage) {
@@ -5576,12 +5581,13 @@ function AlarmDetailAnatomyVisual({ isEnglish = false }: { isEnglish?: boolean }
         </div>
         <div className="alarm-anatomy">
           <div className="alarm-mockup" aria-hidden="true">
-            <div
-              className="alarm-video-panel"
-              style={{
-                backgroundImage: `linear-gradient(0deg, rgba(15, 23, 42, 0.76) 0%, rgba(15, 23, 42, 0.24) 34%, rgba(15, 23, 42, 0) 58%), url(${videoImageUrl})`,
-              }}
-            >
+            <div className="alarm-video-panel">
+              <div
+                className="alarm-video-frame"
+                style={{
+                  backgroundImage: `linear-gradient(0deg, rgba(15, 23, 42, 0.76) 0%, rgba(15, 23, 42, 0.24) 34%, rgba(15, 23, 42, 0) 58%), url(${videoImageUrl})`,
+                }}
+              />
               <strong className="alarm-detection-label">{isEnglish ? "Unauthorized Person" : "未经授权人员"}</strong>
               <b>{isEnglish ? "Event Video / Detection Box" : "事件录像 / 检测框"}</b>
               <small>−15s　{isEnglish ? "Trigger" : "触发时刻"}　+15s</small>
