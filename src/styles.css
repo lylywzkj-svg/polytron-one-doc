@@ -3810,13 +3810,19 @@ progress::-webkit-progress-value {
 }
 
 .role-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: start;
   width: fit-content;
+  max-width: 100%;
   padding: 5px 9px;
   border-radius: 999px;
   background: #f2f2f2;
   color: #6b6b6b;
   font-size: 11px;
   font-weight: 800;
+  text-align: center;
 }
 
 .role-paths p {
