@@ -5219,9 +5219,9 @@ function OverviewSupplementalVisuals({ isEnglish = false, isLegacy = false }: { 
         readingHeading: "Start by Role",
         readingIntro: "Start with the modules used in your role, then follow the relevant investigation or administration workflow.",
         roles: [
-          ["On-duty operator", "Find and Handle Today's Exceptions", "Home inspection → Live View → Notification review → Alarm Handling", "/en/docs/home", "Start with Home"],
-          ["Investigator", "Reconstruct Events and Retain Evidence", "Notification detail → Alarm clip → Playback → Clip and download", "/en/docs/notifications", "Start with Notifications"],
-          ["System Administrator", "Connect Resources and Maintain Access", "Camera onboarding → Recording Schedule → Detection Rules → Users and roles", "/en/docs/cameras", "Start with Cameras"],
+          ["On-Duty Operator", "Find and Handle Today's Exceptions", "Home Inspection → Live View → Notification Review → Alarm Handling", "/en/docs/home", "Start with Home"],
+          ["Investigator", "Reconstruct Events and Retain Evidence", "Notification Detail → Alarm Clip → Playback → Clip and Download", "/en/docs/notifications", "Start with Notifications"],
+          ["System Administrator", "Connect Resources and Maintain Access", "Camera Onboarding → Recording Schedule → Detection Rules → Users and Roles", "/en/docs/cameras", "Start with Cameras"],
         ],
       }
     : {
@@ -5922,9 +5922,9 @@ function GlobalTroubleshootingMapVisual({ isEnglish = false }: { isEnglish?: boo
 function SeverityResponseMatrixVisual({ isEnglish = false }: { isEnglish?: boolean }) {
   const rows = isEnglish
     ? [
-        ["High", "Personal safety, unauthorized entry, critical area, or sustained anomaly", "Verify immediately", "Site lead / Security supervisor", "Record process and result", "高"],
-        ["Medium", "On-site confirmation required, expanding impact, or repeated trigger", "Handle with priority", "Shift lead", "Confirm cause and track", "中"],
-        ["Low", "General reminder, device change, or operational event", "Handle by queue", "On-duty operator", "Batch review and archive", "低"],
+        ["High", "Personal safety, unauthorized entry, critical area, or sustained anomaly", "Verify immediately", "Site Lead / Security Supervisor", "Record process and result", "高"],
+        ["Medium", "On-site confirmation required, expanding impact, or repeated trigger", "Handle with priority", "Shift Lead", "Confirm cause and track", "中"],
+        ["Low", "General reminder, device change, or operational event", "Handle by queue", "On-Duty Operator", "Batch review and archive", "低"],
       ]
     : [
         ["高", "人员安全、未授权进入、重点区域或持续异常", "立即核查", "现场负责人 / 安保主管", "记录过程与结果", "高"],
