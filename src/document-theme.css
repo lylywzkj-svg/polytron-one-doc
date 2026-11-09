@@ -32,8 +32,7 @@
 .docs-shell .docs-content .detection-frame .detection-phase { margin-bottom: 10px; color: var(--doc-caption); font-size: 12px; letter-spacing: .04em; }
 .docs-shell .docs-content .detection-frame .detection-frame-title { margin: 14px 0 6px; color: var(--doc-ink); font-size: 16px; font-weight: 600; }
 .docs-content .detection-frame img { display: block; width: 100%; height: auto; margin: 0; border-radius: 6px; background: var(--doc-paper); }
-.docs-content .detection-index { width: 100%; max-width: 940px; table-layout: fixed; }
-.docs-content .detection-index th:first-child { width: 36%; }
+.docs-content .detection-index { width: 100%; max-width: 940px; table-layout: auto; }
 .docs-content :is(.detection-index th, .detection-index td) { overflow-wrap: anywhere; }
 .docs-content h3[id^="detection-"] { scroll-margin-top: 32px; }
 @media (max-width: 760px) {
@@ -43,10 +42,9 @@
  .docs-shell .docs-content .detection-index :is(th, td) { padding: 12px 10px; font-size: 14px; }
 }
 .docs-content.rich-document > :is(p, h2, h3, ul, ol) { width: 100%; max-width: 940px; }
-.docs-shell .docs-content table.overview-comparison { width: 100%; min-width: 0; max-width: 940px; table-layout: fixed; }
+.docs-shell .docs-content table.overview-comparison { width: 100%; min-width: 0; max-width: 940px; table-layout: auto; }
 .docs-shell .docs-content h2[id^="overview-"] { text-wrap: balance; }
 .docs-shell .docs-content .overview-comparison :is(th, td) { overflow-wrap: anywhere; }
-.docs-content .overview-comparison tr > :first-child { width: 36%; }
 @media (max-width: 760px) {
  .docs-shell .docs-content .overview-comparison :is(th, td) { padding: 12px 10px; font-size: 14px; line-height: 1.6; }
 }
@@ -207,6 +205,10 @@
 
 /* Document tables expose the complete row and column structure. */
 :is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table {
+  width: 100%;
+  min-width: 0;
+  max-width: 940px;
+  table-layout: auto;
   border-collapse: separate;
   border-spacing: 0;
   border: 1px solid #dedede;
@@ -223,6 +225,7 @@
   color: #4d4d4d;
   font-size: 14px;
   line-height: 1.6;
+  overflow-wrap: anywhere;
   text-align: left;
   vertical-align: top;
 }
@@ -234,6 +237,16 @@
 :is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table tbody th {
   color: #171717;
   font-weight: 500;
+}
+:is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table tr > :first-child {
+  width: auto;
+}
+/* Keep a parameter column as wide as its longest label on desktop. */
+@media (min-width: 761px) {
+  :is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table:has(> thead > tr:first-child > :nth-child(2):last-child) tr > :first-child {
+    width: 1%;
+    white-space: nowrap;
+  }
 }
 :is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table tr > :last-child {
   border-right: 0;
@@ -256,5 +269,8 @@
 @media (max-width: 760px) {
   :is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table :is(th, td) {
     padding: 12px 10px;
+  }
+  :is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table:has(> thead > tr:first-child > :nth-child(2):last-child) tr > :first-child {
+    min-width: 6.5em;
   }
 }
