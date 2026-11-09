@@ -4326,6 +4326,27 @@ progress::-webkit-progress-value {
 .alarm-video-panel b { font-size: 13px; }
 .alarm-video-panel small { color: #bfdbfe; font-size: 10px; }
 
+.alarm-video-panel > .alarm-detection-label {
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  max-width: calc(100% - 24px);
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+  background: #991b1b;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
 .alarm-info-panel {
   display: grid;
   align-content: start;

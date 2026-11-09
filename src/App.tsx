@@ -5581,7 +5581,11 @@ function AlarmDetailAnatomyVisual({ isEnglish = false }: { isEnglish?: boolean }
               style={{
                 backgroundImage: `linear-gradient(0deg, rgba(15, 23, 42, 0.76) 0%, rgba(15, 23, 42, 0.24) 34%, rgba(15, 23, 42, 0) 58%), url(${videoImageUrl})`,
               }}
-            ><b>{isEnglish ? "Event Video / Detection Box" : "事件录像 / 检测框"}</b><small>−15s　{isEnglish ? "Trigger" : "触发时刻"}　+15s</small></div>
+            >
+              <strong className="alarm-detection-label">{isEnglish ? "Unauthorized Person" : "未经授权人员"}</strong>
+              <b>{isEnglish ? "Event Video / Detection Box" : "事件录像 / 检测框"}</b>
+              <small>−15s　{isEnglish ? "Trigger" : "触发时刻"}　+15s</small>
+            </div>
             <div className="alarm-info-panel">
               <span className="mock-priority">{isEnglish ? "HIGH PRIORITY" : "高优先级"}</span>
               <strong>{isEnglish ? "Person Entered Restricted Area" : "人员进入限制区域"}</strong>
