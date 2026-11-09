@@ -204,3 +204,57 @@
  .docs-layout, .docs-layout.sidebar-collapsed { grid-template-columns: minmax(0, 1fr); column-gap: 0; }
  .docs-shell .docs-article { padding: 32px 24px 64px; }
 }
+
+/* Document tables expose the complete row and column structure. */
+:is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  background: #fff;
+  overflow: hidden;
+}
+:is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table :is(th, td) {
+  padding: 16px 18px;
+  border: 0;
+  border-right: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  background: #fff;
+  color: #4d4d4d;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left;
+  vertical-align: top;
+}
+:is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table thead th {
+  background: #f5f5f5;
+  color: #171717;
+  font-weight: 600;
+}
+:is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table tbody th {
+  color: #171717;
+  font-weight: 500;
+}
+:is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table tr > :last-child {
+  border-right: 0;
+}
+:is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table tbody tr:last-child > :is(th, td) {
+  border-bottom: 0;
+}
+:is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table thead tr:first-child > :first-child {
+  border-top-left-radius: 7px;
+}
+:is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table thead tr:first-child > :last-child {
+  border-top-right-radius: 7px;
+}
+:is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table tbody tr:last-child > :first-child {
+  border-bottom-left-radius: 7px;
+}
+:is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table tbody tr:last-child > :last-child {
+  border-bottom-right-radius: 7px;
+}
+@media (max-width: 760px) {
+  :is(.docs-shell .docs-content.rich-document, .preview-page-content.rich-document) table :is(th, td) {
+    padding: 12px 10px;
+  }
+}
